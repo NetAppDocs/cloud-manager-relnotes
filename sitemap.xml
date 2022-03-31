@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+    
+    
+  
+
+  
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-relnotes/</loc>
+      
+      <lastmod>2022-03-18T14:33:18+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-relnotes/release-notes-</loc>
+      
+      <lastmod>2022-03-18T14:47:41+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-relnotes//search.html</loc>
+      
+      <lastmod>2022-03-31T02:22:02+00:00</lastmod>
+      
+    </url>
+  
+    <url>
+      <loc>https://docs.netapp.com/us-en/cloud-manager-relnotes/whats-new.html</loc>
+      
+      <lastmod>2022-03-18T14:47:41+00:00</lastmod>
+      
+    </url>
+  
+
+  
+  
+</urlset>
