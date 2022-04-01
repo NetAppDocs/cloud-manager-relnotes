@@ -258,7 +258,34 @@
     </div>
   </div>
   <div class="n-property-bar__toolbar">
-    <!-- Start Language Selector --><!-- End Language Selector -->
+    <!-- Start Language Selector --><div id="ie-i18n" class="n-property-bar__lang-selector">
+      <div id="ie-i18n-menu">
+      <span class="ie-i18n-lang">English</span>
+        <button class="ie-i18n-icon-container" type="button">
+          <svg class="n-globe__icon" aria-labelledby="title">
+            <title>globe</title>
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#globe"></use>
+          </svg>
+        </button>
+      </div>
+      <div id="n-property-navigation-bar__menu--language-selector" class="ie-i18n-results-container n-menu n-menu--v3 n-menu--is-active" style="display: none;">
+        <div class="n-language-selector-menu">
+          <ul class="n-menu__list">
+            <li class="n-menu__list-column">
+              <ul class="n-menu__list"><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/us-en/cloud-manager-relnotes/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">English</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ja-jp/cloud-manager-relnotes/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">日本語</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/zh-cn/cloud-manager-relnotes/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">简体中文</span></a>
+                </li><li class="n-menu__list-item n-menu__list-item--level-1">
+                  <a href="https://docs.netapp.com/ko-kr/cloud-manager-relnotes/whats-new.html" class="n-menu__header-text"><span translate="no" class="notranslate">한국어</span></a>
+                </li></ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div><!-- End Language Selector -->
 
     <div class="n-property-bar__cta"></div>
   </div>
@@ -472,32 +499,242 @@
 <div class="sect1">
 <h2 id="amazon-fsx-for-ontap">Amazon FSx for ONTAP</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="27-february-2022">27 February 2022</h3>
+<div class="sect3">
+<h4 id="assume-iam-role">Assume IAM role</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-fsx-ontap/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>When you create an FSx for ONTAP working environment, you now must provide the ARN of an IAM role that Cloud Manager can assume to create an FSx for ONTAP working environment. You previously needed to provide AWS access keys.</p>
+</div>
+<div class="paragraph">
+<p><a href="/task/task-setting-up-permissions-fsx.html">Learn how to set up permissions for FSx for ONTAP</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="31-october-2021">31 October 2021</h3>
+<div class="sect3">
+<h4 id="create-iscsi-volumes-using-cloud-manager-api">Create iSCSI volumes using Cloud Manager API</h4>
+<div class="paragraph">
+<p>You can create iSCSI volumes for FSx for ONTAP using the Cloud Manager API and manage them in your working environment.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="select-volume-units-when-creating-volumes">Select volume units when creating volumes</h4>
+<div class="paragraph">
+<p>You can <a href="/task/task-add-fsx-volumes.html#creating-volumes">select volume units (GiB or TiB) when creating volumes</a> in FSx for ONTAP.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="4-october-2021">4 October 2021</h3>
+<div class="sect3">
+<h4 id="create-cifs-volumes-using-cloud-manager">Create CIFS volumes using Cloud Manager</h4>
+<div class="paragraph">
+<p>Now you can <a href="/task/task-add-fsx-volumes.html#creating-volumes">create CIFS volumes in FSx for ONTAP using Cloud Manager</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-volumes-using-cloud-manager">Edit volumes using Cloud Manager</h4>
+<div class="paragraph">
+<p>Now you can <a href="/task/task-manage-fsx-volumes.html#editing-volumes">edit FSx for ONTAP volumes using Cloud Manager</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="application-template">Application Template</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="03-mar-2022">03 Mar 2022</h3>
+<div class="sect3">
+<h4 id="now-you-can-build-a-template-to-find-specific-working-environments">Now you can build a Template to find specific working environments.</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-app-template/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>Using the "Find Existing Resources" action you can identify the working environment, and then use other template actions, such as creating a volume, to easily perform actions on existing working environments. <a href="task-define-templates.html#examples-of-finding-existing-resources-and-enabling-services-using-templates">Go here for details</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ability-to-create-a-cloud-volumes-ontap-ha-working-environment-in-aws">Ability to create a Cloud Volumes ONTAP HA working environment in AWS.</h4>
+<div class="paragraph">
+<p>The existing support for creating a Cloud Volumes ONTAP working environment in AWS has been expanded to include creating a high-availability system in addition to a single-node system. <a href="task-define-templates.html#create-a-template-for-a-cloud-volumes-ontap-working-environment">See how to create a template for a Cloud Volumes ONTAP working environment</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="9-feb-2022">9 Feb 2022</h3>
+<div class="sect3">
+<h4 id="now-you-can-build-a-template-to-find-specific-existing-volumes-and-then-enable-cloud-backup">Now you can build a Template to find specific existing volumes and then enable Cloud Backup.</h4>
+<div class="paragraph">
+<p>Using the new "Find Resource" action you can identify all the volumes on which you want to enable Cloud Backup, and then use the Cloud Backup action to enable backup on those volumes.</p>
+</div>
+<div class="paragraph">
+<p>Current support is for volumes on Cloud Volumes ONTAP and on-premises ONTAP systems. <a href="task-define-templates.html#find-existing-volumes-and-activate-cloud-backup">Go here for details</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="31-oct-2021">31 Oct 2021</h3>
+<div class="sect3">
+<h4 id="now-you-can-tag-your-sync-relationships-so-you-can-group-or-categorize-them-for-easy-access">Now you can tag your Sync relationships so you can group or categorize them for easy access.</h4>
+<div class="paragraph">
+<p><a href="concept-tagging.html">Learn more about resource tagging</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="cloud-backup">Cloud Backup</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="03-april-2022">03 April 2022</h3>
+<div class="sect3">
+<h4 id="support-for-cloud-backup-for-applications-1-1-0">Support for Cloud Backup for Applications 1.1.0</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-backup-restore/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>You can integrate Cloud Backup for Applications with Cloud Manager and on-premises SnapCenter to back up the application consistent Snapshots from on-premises ONTAP to cloud. When required you can restore from cloud to on-premises SnapCenter Server.</p>
+</div>
+<div class="paragraph">
+<p>You can back up Oracle and Microsoft SQL applications data from on-premises ONTAP to either Amazon Web Services or Microsoft Azure.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-protect-app-data-to-cloud.html">Learn more about protecting on-premises applications data to cloud</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-search-restore-feature-to-search-for-volumes-or-files-across-all-ontap-backup-files">New Search &amp; Restore feature to search for volumes or files across all ONTAP backup files.</h4>
+<div class="paragraph">
+<p>Now you can search for a volume or file across <strong>all ONTAP backup files</strong> by partial or full volume name, partial or full file name, size range, and additional search filters. This is a great new way to find the data you want to restore if you are not sure which cluster or volume was the source for the data. <a href="task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore">Learn how to use Search &amp; Restore</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="03-march-2022">03 March 2022</h3>
+<div class="sect3">
+<h4 id="ability-to-back-up-persistent-volumes-from-your-gke-kubernetes-clusters-to-google-cloud-storage">Ability to back up persistent volumes from your GKE Kubernetes clusters to Google Cloud storage.</h4>
+<div class="paragraph">
+<p>If your GKE cluster has NetApp Astra Trident installed, and it&#8217;s using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. <a href="task-backup-kubernetes-to-gcp.html">Go here for details</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-beta-capability-to-use-cloud-data-sense-to-scan-your-cloud-backup-files-has-been-discontinued-in-this-release">The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued in this release.</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="14-february-2022">14 February 2022</h3>
+<div class="sect3">
+<h4 id="now-you-can-assign-backup-policies-to-individual-volumes-in-a-single-cluster">Now you can assign backup policies to individual volumes in a single cluster.</h4>
+<div class="paragraph">
+<p>In the past you could assign only a single backup policy to all volumes in a cluster. Now you can create multiple backup policies for a single cluster and apply different policies to different volumes. <a href="task-managing-backups-ontap#changing-the-policy-assigned-to-existing-volumes">See how to create new backup policies for a cluster and assign them to selected volumes</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="a-new-option-enables-you-to-automatically-apply-a-default-backup-policy-to-newly-created-volumes">A new option enables you to automatically apply a default backup policy to newly created volumes.</h4>
+<div class="paragraph">
+<p>In the past, new volumes created in a working environment after Cloud Backup was activated required that you manually apply a backup policy. Now, regardless of if the volume was created in Cloud Manager, System Manager, the CLI, or by using APIs, Cloud Backup will discover the volume and apply the backup policy you have chosen as the default policy.</p>
+</div>
+<div class="paragraph">
+<p>This option is available when enabling backup in a new working environment, or from the <em>Manage Volumes</em> page for existing working environments.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-job-monitor-is-available-to-see-the-in-process-status-of-all-backup-and-restore-jobs">New Job Monitor is available to see the in-process status of all backup and restore jobs.</h4>
+<div class="paragraph">
+<p>The Job Monitor can be very helpful when you have initiated an operation against multiple volumes, like changing the backup policy, or deleting backups, so you can see when the operation has completed on all volumes. <a href="task-monitor-backup-jobs.html">See how to use the Job Monitor</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="cloud-data-sense">Cloud Data Sense</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="15-march-2022">15 March 2022</h3>
+<div class="sect3">
+<h4 id="new-filter-to-show-the-files-to-which-a-specific-user-or-a-group-has-read-or-write-permissions">New Filter to show the files to which a specific user or a group has read or write permissions.</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-data-sense/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>A new Filter called "User / Group Permissions" has been added so you can list the files that a specific user or a group has read and/or write permissions to. You can specify a user name or group name - or partial name. This functionality is available for volumes on Cloud Volumes ONTAP, on-prem ONTAP, Azure NetApp Files, Amazon FSx for ONTAP, and File Shares.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data-sense-can-determine-the-permissions-for-files-in-sharepoint-and-onedrive-accounts">Data Sense can determine the permissions for files in SharePoint and OneDrive accounts.</h4>
+<div class="paragraph">
+<p>Data Sense can read the permissions that exist for files that are being scanned in OneDrive accounts and SharePoint accounts now. This information appears in the Investigation pane details for files and in the Open Permissions area in the Governance Dashboard.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="two-additional-types-of-personal-data-can-be-identified-by-data-sense">Two additional types of personal data can be identified by Data Sense.</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>French INSEE - The INSEE code is a numerical code used by the French National Institute for Statistics and Economic Studies (INSEE) to identify various entities.</p>
+</li>
+<li>
+<p>Passwords - This information is identified using proximity validation by looking for permutations of the word "password" next to a alphanumeric string. The number of items found will be listed under "Personal Results" in the Compliance Dashboard. You can search for files that contain passwords in the Investigation pane using the Filter <strong>Personal Data &gt; Password</strong>.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-beta-capability-to-use-cloud-data-sense-to-scan-your-cloud-backup-files-has-been-discontinued-in-this-release-2">The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued in this release.</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="9-february-2022">9 February 2022</h3>
+<div class="sect3">
+<h4 id="added-support-for-scanning-microsoft-sharepoint-online-accounts">Added support for scanning Microsoft SharePoint online accounts.</h4>
+<div class="paragraph">
+<p>Now you can add your SharePoint online accounts to Data Sense in order to scan the documents and files from your SharePoint sites. <a href="task-scanning-sharepoint.html">See how to scan your SharePoint accounts</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data-sense-can-copy-files-from-a-data-source-to-a-target-location-and-synchronize-those-files">Data Sense can copy files from a data source to a target location and synchronize those files.</h4>
+<div class="paragraph">
+<p>This is helpful for situations where you’re migrating data and you want to catch any last changes that are being made to the files. This action uses the <a href="https://docs.netapp.com/us-en/cloud-manager-sync/concept_cloud_sync.html" target="_blank" rel="noopener">NetApp Cloud Sync</a> functionality to copy and sync data from a source to a target.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system">See how to copy and sync files</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-language-support-for-dsar-reports">New language support for DSAR reports.</h4>
+<div class="paragraph">
+<p>German and Spanish are now supported when searching for names of data subjects in order to create Data Subject Access Request (DSAR) reports. This report is designed to aid in your organization’s requirement to comply with GDPR or similar data privacy laws.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="three-additional-types-of-personal-data-can-be-identified-by-data-sense">Three additional types of personal data can be identified by Data Sense.</h4>
+<div class="paragraph">
+<p>Data Sense can now find French social security numbers, French IDs, and French driver license numbers in files. <a href="reference-private-data-categories.html#types-of-personal-data">See the list of all personal data types that Data Sense identifies in scans</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="security-group-port-changed-for-data-sense-communication-to-the-connector">Security group port changed for Data Sense communication to the Connector.</h4>
+<div class="paragraph">
+<p>The security group for the Cloud Manager Connector will use port 443 instead of port 80 for inbound and outbound traffic to and from the Data Sense instance for added security. Both ports remain open at this time, so you shouldn&#8217;t see any issues, but you should update the security group in any older deployments of the Connector as port 80 will be deprecated in a future release.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="2-january-2022">2 January 2022</h3>
+<div class="sect3">
+<h4 id="ability-to-integrate-a-global-active-directory-to-identify-file-owners-and-permissions">Ability to integrate a global Active Directory to identify file owners and permissions.</h4>
+<div class="paragraph">
+<p>Now you can integrate a global Active Directory with Cloud Data Sense to enhance the results that Data Sense reports about file owners and which users and groups have access to your files.</p>
+</div>
+<div class="paragraph">
+<p>In addition to the Active Directory credentials you enter so that Data Sense can scan CIFS volumes from certain data sources, this new integration provides as additional integration for other users and systems. Data Sense will look in all integrated Active Directories for user and permission details. <a href="task-add-active-directory-datasense.html">See how to set up your global Active Directory</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data-sense-policies-can-now-be-used-to-delete-files">Data Sense "policies" can now be used to delete files.</h4>
+<div class="paragraph">
+<p>Data Sense can automatically delete files that match the query that you define in a Policy. <a href="task-managing-highlights.html#deleting-source-files-automatically-using-policies">See how to create custom Policies</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -512,8 +749,63 @@
 <div class="sect1">
 <h2 id="cloud-tiering">Cloud Tiering</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="2-september-2021">2 September 2021</h3>
+<div class="sect3">
+<h4 id="cloud-tiering-byol-license-replaces-fabricpool-license">Cloud Tiering BYOL license replaces FabricPool license.</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-tiering/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>A new <strong>Cloud Tiering</strong> license is now available for tiering configurations that are supported within Cloud Manager using the Cloud Tiering service. It is a floating license that you can use across multiple on-premises ONTAP clusters. The <strong>FabricPool</strong> license that you may have used in the past is retained only for configurations that aren’t supported within Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-licensing-cloud-tiering.html#use-a-cloud-tiering-byol-license">Learn more about the new Cloud Tiering license</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tier-inactive-data-from-on-prem-ontap-clusters-to-s3-compatible-object-storage">Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage.</h4>
+<div class="paragraph">
+<p>Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. <a href="task-tiering-onprem-s3-compat.html">See how to tier data to S3-compatible object storage</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="7-july-2021">7 July 2021</h3>
+<div class="sect3">
+<h4 id="the-connector-can-be-running-on-premises-when-tiering-data-to-azure-blob-storage">The Connector can be running on premises when tiering data to Azure Blob storage.</h4>
+<div class="paragraph">
+<p>You are no longer required to use a Connector installed in an Azure VNet. Your Connector can be running on a host in your premises when tiering data to Azure Blob storage.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="7-june-2021">7 June 2021</h3>
+<div class="sect3">
+<h4 id="new-tiering-classes-now-available-for-certain-cloud-provider-storage">New tiering classes now available for certain cloud provider storage.</h4>
+<div class="paragraph">
+<p>In earlier releases you could transition tiered data from the Standard storage class to another storage class after 30 days when using Amazon S3 or Google Cloud object storage. This release adds some new functionality:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can choose the number of days when tiered data will move to a more cost-effective tier. This is called data "life cycle management".</p>
+</li>
+<li>
+<p>Azure Blob now supports the <em>Cool</em> access tier.</p>
+</li>
+<li>
+<p>Google Cloud Storage supports moving tiered data to multiple storage tiers over time. For example, you can move tiered data from the <em>Standard</em> class to the <em>Nearline</em> class after 45 days, and then to the <em>Coldline</em> class after 75 days, and then to the <em>Archive</em> class after 270 days.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="now-you-can-proactively-move-data-back-to-the-performance-tier-from-the-cloud-tier">Now you can proactively move data back to the performance tier from the cloud tier.</h4>
+<div class="paragraph">
+<p>This functionality is useful if you want to stop using tiering on a volume, or if you decide to keep all user data on the performance tier, but keep Snapshot copies on the cloud tier. This capability is available when using ONTAP 9.8 and greater.</p>
+</div>
+<div class="paragraph">
+<p>See how to <a href="task-managing-tiering.html#migrating-data-from-the-cloud-tier-back-to-the-performance-tier">migrate data back to the performance tier</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -552,16 +844,121 @@
 <div class="sect1">
 <h2 id="global-file-cache">Global File Cache</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="17-december-2021-version-1-2-0">17 December 2021 (version 1.2.0)</h3>
+<div class="sect3">
+<h4 id="the-openssl-module-has-been-upgraded-to-version-1-1-1l">The OpenSSL module has been upgraded to version 1.1.1l.</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-file-cache/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>This is the latest version and it is more secure. This module is used for secure communication between GFC Edge and GFC Core.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-logging-infrastructure-has-been-enhanced">The logging infrastructure has been enhanced.</h4>
+
+</div>
+</div>
+<div class="sect2">
+<h3 id="9-june-2021-version-1-1-0">9 June 2021 (version 1.1.0)</h3>
+<div class="sect3">
+<h4 id="the-edge-synchronization-feature-has-been-added">The "Edge Synchronization" feature has been added.</h4>
+<div class="paragraph">
+<p>This feature keeps multiple Edges at a remote office in sync and the data is always cached/warm. When a file is flushed/fetched at one Edge, then the same file on all Edges participating in Edge Sync is updated and cached. See section 8.4 in the <a href="https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.1.0.pdf" target="_blank" rel="noopener">NetApp Global File Cache User Guide</a> for details.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-openssl-module-has-been-upgraded-to-version-1-1-1k">The OpenSSL module has been upgraded to version 1.1.1k.</h4>
+<div class="paragraph">
+<p>This is the latest version and it is more secure. This module is used for secure communication between GFC Edge and GFC Core.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="updated-license-registration-page">Updated License Registration Page.</h4>
+<div class="paragraph">
+<p>The GFC License Registration Page now displays the number of licenses when activated through a NetApp subscription.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="21-march-2021-version-1-0-3">21 March 2021 (version 1.0.3)</h3>
+<div class="sect3">
+<h4 id="software-installer-updates-to-automatically-exclude-gfc-process-from-windows-defender">Software installer updates to automatically exclude GFC process from Windows Defender.</h4>
+<div class="paragraph">
+<p>The Global File Cache software installer now excludes all GFC processes from Windows Defender software on-demand scanning.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="a-new-policy-configuration-tab-has-been-added-to-the-configuration-console">A new Policy Configuration tab has been added to the Configuration Console.</h4>
+<div class="paragraph">
+<p>This configuration tab enables you to add pre-population jobs from the GFC Core.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="enhanced-the-software-to-use-less-memory-while-increasing-performance-and-stability">Enhanced the software to use less memory while increasing performance and stability.</h4>
+
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="kubernetes">Kubernetes</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="27-feb-2022">27 Feb 2022</h3>
+<div class="sect3">
+<h4 id="support-for-kubernetes-clusters-in-google-cloud">Support for Kubernetes clusters in Google Cloud</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-kubernetes/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>You can now add and manage managed Google Kubernetes Engine (GKE) clusters and self-managed Kubernetes clusters in Google Cloud using Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<p><a href="kubernetes-reqs-gke.html">Learn how to get started with Kubernetes clusters in Google Cloud</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="11-jan-2022">11 Jan 2022</h3>
+<div class="sect3">
+<h4 id="support-for-kubernetes-clusters-in-azure">Support for Kubernetes clusters in Azure</h4>
+<div class="paragraph">
+<p>You can now add and manage managed Azure Kubernetes clusters (AKS) and self-managed Kubernetes clusters in Azure using Cloud Manager.</p>
+</div>
+<div class="paragraph">
+<p><a href="kubernetes-reqs-aks.html">Getting started with Kubernetes clusters in Azure</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="28-nov-2021">28 Nov 2021</h3>
+<div class="sect3">
+<h4 id="support-for-kubernetes-clusters-in-aws">Support for Kubernetes clusters in AWS</h4>
+<div class="paragraph">
+<p>You can now add your managed-Kubernetes clusters to Cloud Manager&#8217;s Canvas for advanced data management.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Discover Amazon EKS clusters</p>
+</li>
+<li>
+<p>Back up persistent volumes using Cloud Backup</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="concept-kubernetes.html">Learn more about Kubernetes support</a>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-relnotes/images/tip.svg" alt="Tip">
+</td>
+<td class="content">
+The existing Kubernetes service (available through the <strong>K8s</strong> tab) has been deprecated and will be removed in a future release.
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -584,16 +981,85 @@
 <div class="sect1">
 <h2 id="on-prem-ontap-clusters">On-prem ONTAP clusters</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="27-feb-2022-2">27 Feb 2022</h3>
+<div class="sect3">
+<h4 id="an-on-premises-ontap-tab-is-available-in-the-digital-wallet">An "On-Premises ONTAP" tab is available in the Digital Wallet.</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-ontap-onprem/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>Now you can view an inventory of your on-prem ONTAP clusters along with their hardware and service contracts expiration dates. Additional details about the clusters are also available.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-discovering-ontap.html#viewing-cluster-information-and-contract-details">See how to view this important on-prem cluster information</a>. You&#8217;ll need to have a NetApp Support Site account (NSS) for the clusters, and the NSS credentials will need to be attached to your Cloud Manager account.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="11-jan-2022-2">11 Jan 2022</h3>
+<div class="sect3">
+<h4 id="tags-that-you-add-to-volumes-on-on-prem-ontap-clusters-can-be-use-with-the-tagging-service">Tags that you add to volumes on on-prem ONTAP clusters can be use with the Tagging service.</h4>
+<div class="paragraph">
+<p>Tags that you add to a volume are now associated with the  tagging feature of the Application Templates service, which can help you organize and simplify the management of your resources.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="28-nov-2021-2">28 Nov 2021</h3>
+<div class="sect3">
+<h4 id="create-volume-wizard-for-on-prem-ontap-clusters-has-been-simplified">Create volume wizard for on-prem ONTAP clusters has been simplified</h4>
+<div class="paragraph">
+<p>We redesigned the create volume wizard for ease of use and you can now choose a custom export policy.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="ransomware-protection">Ransomware Protection</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="5-apr-2021">5 Apr 2021</h3>
+<div class="sect3">
+<h4 id="new-panel-to-track-the-security-hardening-of-your-ontap-environments">New panel to track the security hardening of your ONTAP environments.</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-ransomware/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>A new panel "Harden your ONTAP environments" provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a> and to the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html" target="_blank" rel="noopener">ONTAP anti-ransomware feature</a> that proactively detects and warns about abnormal activity.</p>
+</div>
+<div class="paragraph">
+<p>You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion. <a href="task-analyze-ransomware-data.html#status-of-ontap-systems-hardening">Go here for details</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-panel-to-show-how-different-categories-of-data-are-being-protected-using-cloud-backup">New panel to show how different categories of data are being protected using Cloud Backup.</h4>
+<div class="paragraph">
+<p>This new "Backup Status" panel shows how comprehensively your most important categories of data are backed up in case you need to recover because of a ransomware attack. This data is a visual representation of how many items of a specific category in an environment are backed up by Cloud Backup.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="15-mar-2022">15 Mar 2022</h3>
+<div class="sect3">
+<h4 id="new-panel-to-track-the-permissions-status-of-your-business-critical-data">New panel to track the permissions status of your business critical data</h4>
+<div class="paragraph">
+<p>A new panel "Business critical data permissions analysis" shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business-critical data. <a href="task-analyze-ransomware-data.html#status-of-permissions-on-your-critical-business-data">Go here for details</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="open-permissions-area-now-includes-onedrive-and-sharepoint-accounts">Open Permissions area now includes OneDrive and SharePoint accounts</h4>
+<div class="paragraph">
+<p>The Open Permissions area in the Ransomware Protection Dashboard now includes the permissions that exist for files that are being scanned in OneDrive accounts and SharePoint accounts.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="9-feb-2022-2">9 Feb 2022</h3>
+<div class="sect3">
+<h4 id="new-ransomware-protection-service">New Ransomware Protection service</h4>
+<div class="paragraph">
+<p>The new Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-ransomware-protection.html">Learn more about this new service</a>.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -608,8 +1074,17 @@
 <div class="sect1">
 <h2 id="snapcenter-service">SnapCenter Service</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="21-dec-2021">21 Dec 2021</h3>
+<div class="sect3">
+<h4 id="fixes-for-apache-log4j-vulnerabilities">Fixes for Apache Log4j vulnerabilities</h4>
 <div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-snapcenter/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
+<p>SnapCenter Service 1.0.1 upgrades Apache Log4j from version 2.9.1 to 2.17 to address the following vulnerabilities: CVE-2021-44228, CVE-2021-4104, and CVE-2021-45105.</p>
+</div>
+<div class="paragraph">
+<p>The SnapCenter Service cluster should auto-update to the latest version. You should ensure that the version in the SnapCenter Service UI shows that the cluster is 1.0.1.1251 or later.</p>
+</div>
+</div>
 </div>
 </div>
 </div>
