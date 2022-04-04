@@ -45,12 +45,52 @@
   <link rel="stylesheet" href='/us-en/cloud-manager-relnotes/css/na-utility.css' type='text/css'>
   <link rel="stylesheet" href='/us-en/cloud-manager-relnotes/css/na-sidebar.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/clouddocs.css' type='text/css'>
+  <link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/custom-dropdown.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/na-pagenav.css' type='text/css'>
 
   
   <link rel="stylesheet" href="/us-en/cloud-manager-relnotes/css/landing-page.css" type="text/css">
   <link rel="stylesheet" href="/us-en/cloud-manager-relnotes/css/tabbed-blocks.css" type="text/css">
-  <link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/na-feature.css' type='text/css'><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <!-- Canonical url -->
+  <link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/na-feature.css' type='text/css'><!-- Top level site integrations --><script>
+    if (document.location.hostname === "docs.netapp.com") {
+      var head = document.getElementsByTagName('head')[0];
+      var onetrustConsent = document.createElement("script");
+      onetrustConsent.type = "text/javascript";
+      onetrustConsent.src = "https://cdn.cookielaw.org/consent/72570c5c-fe30-465f-b0e0-b77f7fb4ae34/OtAutoBlock.js";
+      head.appendChild(onetrustConsent);
+
+      var onetrustScript = document.createElement("script");
+      onetrustScript.type = "text/javascript";
+      onetrustScript.src = "https://cdn.cookielaw.org/scripttemplates/otSDKStub.js";
+      onetrustScript.charset = "UTF-8";
+      onetrustScript.dataset.documentLanguage = "true";
+      onetrustScript.dataset.domainScript = "72570c5c-fe30-465f-b0e0-b77f7fb4ae34";
+      head.appendChild(onetrustScript);
+    }
+
+    function OptanonWrapper() { }
+
+    if (document.location.hostname === "docs.netapp.com") {
+      var adobe = document.createElement("script");
+      adobe.type = "text/plain";
+      adobe.className = "optanon-category-C0002";
+      adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
+      head.appendChild(adobe);
+
+      var google = document.createElement("script");
+      google.type = "text/plain";
+      google.className = "optanon-category-C0002";
+      google.src = "https://www.googletagmanager.com/gtag/js?id=UA-81697994-3";
+      head.appendChild(google);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-81697994-3');
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
   <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/us-en/cloud-manager-relnotes/css/product-family.css' type="text/css">
@@ -61,15 +101,6 @@
 
   <script src='/us-en/cloud-manager-relnotes/js/na-utility.js'></script>
   <script src='/us-en/cloud-manager-relnotes/js/clouddocs.js'></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    var head = document.getElementsByTagName('head')[0];
-    var adobe = document.createElement("script");
-    adobe.type = "text/javascript";
-    adobe.src = "//assets.adobedtm.com/60287eadf1ee/c284da483c83/launch-e9ff3acac59f.min.js";
-    head.appendChild(adobe);
-  }
-  </script>
   <script src='/us-en/cloud-manager-relnotes/js/jquery.navgoco.min.js'></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src='/us-en/cloud-manager-relnotes/js/toc.js'></script>
@@ -122,16 +153,8 @@
               $("#tg-sb-icon").toggleClass('fa-toggle-off');
           });
       });
-  </script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-81697994-3"></script>
-  <script>
-  if (document.location.hostname === "docs.netapp.com") {
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-81697994-3');
-  }
   </script>
-  <script src='/us-en/cloud-manager-relnotes/js/version-dropdown.js'></script>
+  <script src='/us-en/cloud-manager-relnotes/js/custom-dropdown.js'></script>
   <script src='/us-en/cloud-manager-relnotes/js/FileSaver.min.js'></script>
   <script src='/us-en/cloud-manager-relnotes/js/jszip-utils.min.js'></script>
   <script src='/us-en/cloud-manager-relnotes/js/jszip.min.js'></script>
@@ -139,16 +162,14 @@
 </head>
 
 
-  <body class role="document">
+  <body class role="document" data-flavor="">
     <div id="page" class="n-off-canvas-menu">
       <div class="n-off-canvas-menu__menu"><!--TODO: Add offcanvas code --></div>
       <div class="n-off-canvas-menu__content-wrap">
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar">
-    <div id="version-dropdown"></div>
-    <div class="page-nav-contribute"  >
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"  >
       <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-relnotes/issues/new?body=Page%3A%20[Recent changes in Cloud Manager](https://docs.netapp.com/us-en/cloud-manager-relnotes/whats-new.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-relnotes/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
       <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-relnotes/blob/main/whats-new.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-relnotes/images/edit-sm.svg" class="github-icon" />Edit this page</a>
       <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-relnotes/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
@@ -245,7 +266,8 @@
           data-did-you-mean="Search for {suggestion}." 
           data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
           data-results-found="{hitCount} results found"  
-          data-sk-es-pf-indexes=""></div>
+          data-sk-es-pf-indexes=""
+          data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
             <svg class="n-icon-search n-property-bar__search-toggle-button-icon" aria-labelledby="title">
               <title>search</title>
@@ -334,6 +356,9 @@
 </div>
 <div class="n-pdf-body-container">
   <ul id="toggleContainerPdf" class="n-pdf-body" style="display:none;"><li class="pdf-ux-container">
+        
+        
+        
         <a target="_blank" href="/us-en/cloud-manager-relnotes/pdfs/fullsite-sidebar/Cloud_Manager_release_notes.pdf" >
           <img src="/us-en/cloud-manager-relnotes/images/pdf.png" width="16" height="16"/>PDF of this doc site</a>
 
@@ -410,6 +435,7 @@
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
 <script>$("li.active").parents('li').toggleClass("active");</script>
 
+
   </div>
   
 
@@ -452,12 +478,12 @@
 <p class="page-details">
   
     
-    <time datetime="2022-04-04 19:27:02 +0000">04/04/2022</time>
+    <time datetime="2022-04-04 21:13:36 +0000">04/04/2022</time>
     
   
 
 <span>Contributors
-  <a target="_blank" href="https://github.com/netapp-bcammett">
+  <a target="_blank" class="ext-link-indicator" href="https://github.com/netapp-bcammett">
     <img  class="avatar avatar-small"
           alt="netapp-bcammett"
           width="20" height="20"
@@ -702,7 +728,7 @@
 <h2 id="cloud-backup">Cloud Backup</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="03-april-2022">03 April 2022</h3>
+<h3 id="3-april-2022">3 April 2022</h3>
 <div class="sect3">
 <h4 id="support-for-cloud-backup-for-applications-1-1-0">Support for Cloud Backup for Applications 1.1.0</h4>
 <div class="paragraph">
@@ -712,22 +738,22 @@
 <p>You can back up Oracle and Microsoft SQL applications data from on-premises ONTAP to either Amazon Web Services or Microsoft Azure.</p>
 </div>
 <div class="paragraph">
-<p><a href="concept-protect-app-data-to-cloud.html">Learn more about protecting on-premises applications data to cloud</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-app-data-to-cloud.html">Learn more about protecting on-premises applications data to cloud</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="new-search-restore-feature-to-search-for-volumes-or-files-across-all-ontap-backup-files">New Search &amp; Restore feature to search for volumes or files across all ONTAP backup files.</h4>
 <div class="paragraph">
-<p>Now you can search for a volume or file across <strong>all ONTAP backup files</strong> by partial or full volume name, partial or full file name, size range, and additional search filters. This is a great new way to find the data you want to restore if you are not sure which cluster or volume was the source for the data. <a href="task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore">Learn how to use Search &amp; Restore</a>.</p>
+<p>Now you can search for a volume or file across <strong>all ONTAP backup files</strong> by partial or full volume name, partial or full file name, size range, and additional search filters. This is a great new way to find the data you want to restore if you are not sure which cluster or volume was the source for the data. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore">Learn how to use Search &amp; Restore</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="03-march-2022">03 March 2022</h3>
+<h3 id="3-march-2022-2">3 March 2022</h3>
 <div class="sect3">
 <h4 id="ability-to-back-up-persistent-volumes-from-your-gke-kubernetes-clusters-to-google-cloud-storage">Ability to back up persistent volumes from your GKE Kubernetes clusters to Google Cloud storage.</h4>
 <div class="paragraph">
-<p>If your GKE cluster has NetApp Astra Trident installed, and it&#8217;s using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. <a href="task-backup-kubernetes-to-gcp.html">Go here for details</a>.</p>
+<p>If your GKE cluster has NetApp Astra Trident installed, and it&#8217;s using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-kubernetes-to-gcp.html">Go here for details</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -740,7 +766,7 @@
 <div class="sect3">
 <h4 id="now-you-can-assign-backup-policies-to-individual-volumes-in-a-single-cluster">Now you can assign backup policies to individual volumes in a single cluster.</h4>
 <div class="paragraph">
-<p>In the past you could assign only a single backup policy to all volumes in a cluster. Now you can create multiple backup policies for a single cluster and apply different policies to different volumes. <a href="task-managing-backups-ontap#changing-the-policy-assigned-to-existing-volumes">See how to create new backup policies for a cluster and assign them to selected volumes</a>.</p>
+<p>In the past you could assign only a single backup policy to all volumes in a cluster. Now you can create multiple backup policies for a single cluster and apply different policies to different volumes. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-managing-backups-ontap#changing-the-policy-assigned-to-existing-volumes">See how to create new backup policies for a cluster and assign them to selected volumes</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -755,7 +781,7 @@
 <div class="sect3">
 <h4 id="new-job-monitor-is-available-to-see-the-in-process-status-of-all-backup-and-restore-jobs">New Job Monitor is available to see the in-process status of all backup and restore jobs.</h4>
 <div class="paragraph">
-<p>The Job Monitor can be very helpful when you have initiated an operation against multiple volumes, like changing the backup policy, or deleting backups, so you can see when the operation has completed on all volumes. <a href="task-monitor-backup-jobs.html">See how to use the Job Monitor</a>.</p>
+<p>The Job Monitor can be very helpful when you have initiated an operation against multiple volumes, like changing the backup policy, or deleting backups, so you can see when the operation has completed on all volumes. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-monitor-backup-jobs.html">See how to use the Job Monitor</a>.</p>
 </div>
 </div>
 </div>
@@ -764,6 +790,21 @@
 <div class="sect1">
 <h2 id="cloud-data-sense">Cloud Data Sense</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="5-april-2022">5 April 2022</h3>
+<div class="sect3">
+<h4 id="four-new-types-of-australian-personal-data-can-be-identified-by-data-sense">Four new types of Australian personal data can be identified by Data Sense.</h4>
+<div class="paragraph">
+<p>Data Sense can identify and categorize files that contain the Australian TFN (Tax File Number), Australian Driver’s License Number, Australian Medicare Number, and Australian Passport Number. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/reference-private-data-categories.html#types-of-personal-data">See all the types of personal data that Data Sense can identify in your data</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="global-active-directory-server-can-be-an-ldap-server-now">Global Active Directory server can be an LDAP server now.</h4>
+<div class="paragraph">
+<p>The global Active Directory server you integrate with Data Sense can be an LDAP Server now in addition to the previously supported DNS Server. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-add-active-directory-datasense.html">Go here for details</a>.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="15-march-2022">15 March 2022</h3>
 <div class="sect3">
@@ -801,7 +842,7 @@
 <div class="sect3">
 <h4 id="added-support-for-scanning-microsoft-sharepoint-online-accounts">Added support for scanning Microsoft SharePoint online accounts.</h4>
 <div class="paragraph">
-<p>Now you can add your SharePoint online accounts to Data Sense in order to scan the documents and files from your SharePoint sites. <a href="task-scanning-sharepoint.html">See how to scan your SharePoint accounts</a>.</p>
+<p>Now you can add your SharePoint online accounts to Data Sense in order to scan the documents and files from your SharePoint sites. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-scanning-sharepoint.html">See how to scan your SharePoint accounts</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -810,7 +851,7 @@
 <p>This is helpful for situations where you’re migrating data and you want to catch any last changes that are being made to the files. This action uses the <a href="https://docs.netapp.com/us-en/cloud-manager-sync/concept_cloud_sync.html" target="_blank" rel="noopener">NetApp Cloud Sync</a> functionality to copy and sync data from a source to a target.</p>
 </div>
 <div class="paragraph">
-<p><a href="task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system">See how to copy and sync files</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-managing-highlights.html#copying-and-synchronizing-source-files-to-a-target-system">See how to copy and sync files</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -822,7 +863,7 @@
 <div class="sect3">
 <h4 id="three-additional-types-of-personal-data-can-be-identified-by-data-sense">Three additional types of personal data can be identified by Data Sense.</h4>
 <div class="paragraph">
-<p>Data Sense can now find French social security numbers, French IDs, and French driver license numbers in files. <a href="reference-private-data-categories.html#types-of-personal-data">See the list of all personal data types that Data Sense identifies in scans</a>.</p>
+<p>Data Sense can now find French social security numbers, French IDs, and French driver license numbers in files. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/reference-private-data-categories.html#types-of-personal-data">See the list of all personal data types that Data Sense identifies in scans</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -840,13 +881,13 @@
 <p>Now you can integrate a global Active Directory with Cloud Data Sense to enhance the results that Data Sense reports about file owners and which users and groups have access to your files.</p>
 </div>
 <div class="paragraph">
-<p>In addition to the Active Directory credentials you enter so that Data Sense can scan CIFS volumes from certain data sources, this new integration provides as additional integration for other users and systems. Data Sense will look in all integrated Active Directories for user and permission details. <a href="task-add-active-directory-datasense.html">See how to set up your global Active Directory</a>.</p>
+<p>In addition to the Active Directory credentials you enter so that Data Sense can scan CIFS volumes from certain data sources, this new integration provides as additional integration for other users and systems. Data Sense will look in all integrated Active Directories for user and permission details. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-add-active-directory-datasense.html">See how to set up your global Active Directory</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="data-sense-policies-can-now-be-used-to-delete-files">Data Sense "policies" can now be used to delete files.</h4>
 <div class="paragraph">
-<p>Data Sense can automatically delete files that match the query that you define in a Policy. <a href="task-managing-highlights.html#deleting-source-files-automatically-using-policies">See how to create custom Policies</a>.</p>
+<p>Data Sense can automatically delete files that match the query that you define in a Policy. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-managing-highlights.html#deleting-source-files-automatically-using-policies">See how to create custom Policies</a>.</p>
 </div>
 </div>
 </div>
@@ -1156,14 +1197,6 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="connector">Connector</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-connector/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="global-file-cache">Global File Cache</h2>
 <div class="sectionbody">
 <div class="sect2">
@@ -1224,6 +1257,41 @@
 <div class="sect1">
 <h2 id="kubernetes">Kubernetes</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="04-apr-2022">04 Apr 2022</h3>
+<div class="sect3">
+<h4 id="manage-kubernetes-clusters-using-the-cloud-manager-resource-page">Manage Kubernetes clusters using the Cloud Manager resource page</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Kubernetes cluster management now has enhanced integration directly from the cluster working environment. You can now take the following actions from the cluster resource page.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-trident.html">Install Astra Trident</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-storage-classes.html">Add storage classes</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-persistent-volumes.html">View persistent volumes</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-manage-remove-cluster.html">Remove clusters</a></p>
+</li>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-kubernetes-enable-services.html">Enable data services</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>A new <a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/task/task-k8s-quick-start.html">Quick start</a> gets you up and running quickly.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="27-feb-2022-2">27 Feb 2022</h3>
 <div class="sect3">
@@ -1328,14 +1396,6 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
 <p>The Monitoring service is also supported in Government regions in AWS and Azure.</p>
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="netapp-accounts">NetApp accounts</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Unresolved directive in whats-new.adoc - include::https://raw.githubusercontent.com/NetAppDocs/cloud-manager-accounts/main/whats-new.adoc[tag=whats-new,leveloffset=+1]</p>
 </div>
 </div>
 </div>
@@ -1462,104 +1522,125 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
   <div class="n-footer__bottom">
     <div class="n-container">
       <div class="n-footer__bottom-left">
-
         <div class="n-footer__copyright">
           <ul class="n-footer__copyright-list">
             <li class="n-footer__copyright-link">
-            <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
+              <a href="https://www.netapp.com/us/legal/copyright.aspx">© 2022 NetApp, Inc.</a>
             </li>
-
-</ul>
-</div>
-<div class="n-footer__social-links">
-<ul class="n-footer__social-link-list">
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com" target="_blank" title="blog" alt="blog">
-<span class="n-footer__social-link-text">blog</span>
-<svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
-  <title>blog@</title>
-  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#blog"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/" target="_blank" title="community" alt="community">
-<span class="n-footer__social-link-text">community</span>
-<svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
-<title>community@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#comments"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp" target="_blank" title="twitter" alt="twitter">
-<span class="n-footer__social-link-text">twitter</span>
-<svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
-<title>twitter@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#twitter"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp" target="_blank" title="facebook" alt="facebook">
-<span class="n-footer__social-link-text">facebook</span>
-<svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
-<title>facebook@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#facebook"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-linkedin" href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
-<span class="n-footer__social-link-text">linkedin</span>
-<svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
-<title>linkedin@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#linkedin"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-youtube" href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
-<span class="n-footer__social-link-text">youtube</span>
-<svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
-<title>youtube@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#youtube"></use>
-</svg>
-
-</a>
-</li>
-<li class="n-footer__social-link-list-item">
-<a class="n-footer__social-link" data-ntap-social="follow-slideshare" href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
-<span class="n-footer__social-link-text">slideshare</span>
-<svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
-<title>slideshare@</title>
-<use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#slideshare"></use>
-</svg>
-
-</a>
-</li>
-</ul>
-</div>
-
-</div>
-<div class="n-footer__bottom-right">
-  <p class="n-footer__fine-print">Have feedback for our website?<a target="_self" href="javascript:netapp_mailto()" class="n-footer__copyright">Let us know</a>
-  <a href="https://docs.netapp.com/us-en/announcements/" class="n-footer__copyright">Announcements</a>
-  </p>
-</div>
-</div>
-</div>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/terms-of-use/">Terms of Use</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/privacy-policy/">Privacy Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://www.netapp.com/company/legal/cookie-policy/">Cookie Policy</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a class="ot-sdk-show-settings">Cookie Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="n-footer__bottom-right">
+        <div class="n-footer__copyright">
+          <ul class="n-footer__copyright-list">
+            <li class="n-footer__copyright-link">
+              <span class="n-footer__fine-print">Have feedback for our website?</span>
+              <a target="_self" href="javascript:netapp_mailto()">Let us know</a>
+            </li>
+            <li class="n-footer__copyright-link">
+              <a href="https://docs.netapp.com/us-en/announcements/">Announcements</a>
+            </li>
+          </ul>
+        </div>
+        <div class="n-footer__social-links">
+          <ul class="n-footer__social-link-list">
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-blog" href="https://blog.netapp.com"
+                target="_blank" title="blog" alt="blog">
+                <span class="n-footer__social-link-text">blog</span>
+                <svg class="n-icon-blog n-footer__social-link-icon" aria-labelledby="title">
+                  <title>blog@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#blog"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-community" href="https://community.netapp.com/"
+                target="_blank" title="community" alt="community">
+                <span class="n-footer__social-link-text">community</span>
+                <svg class="n-icon-community n-footer__social-link-icon" aria-labelledby="title">
+                  <title>community@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#comments"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-twitter" href="https://twitter.com/netapp"
+                target="_blank" title="twitter" alt="twitter">
+                <span class="n-footer__social-link-text">twitter</span>
+                <svg class="n-icon-twitter n-footer__social-link-icon" aria-labelledby="title">
+                  <title>twitter@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#twitter"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-facebook" href="https://www.facebook.com/NetApp"
+                target="_blank" title="facebook" alt="facebook">
+                <span class="n-footer__social-link-text">facebook</span>
+                <svg class="n-icon-facebook n-footer__social-link-icon" aria-labelledby="title">
+                  <title>facebook@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#facebook"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-linkedin"
+                href="https://www.linkedin.com/company/netapp" target="_blank" title="linkedin" alt="linkedin">
+                <span class="n-footer__social-link-text">linkedin</span>
+                <svg class="n-icon-linkedin n-footer__social-link-icon" aria-labelledby="title">
+                  <title>linkedin@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#linkedin"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-youtube"
+                href="https://www.youtube.com/user/NetAppTV" target="_blank" title="youtube" alt="youtube">
+                <span class="n-footer__social-link-text">youtube</span>
+                <svg class="n-icon-youtube n-footer__social-link-icon" aria-labelledby="title">
+                  <title>youtube@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#youtube"></use>
+                </svg>
+              </a>
+            </li>
+            <li class="n-footer__social-link-list-item">
+              <a class="n-footer__social-link" data-ntap-social="follow-slideshare"
+                href="https://www.slideshare.net/NetApp" target="_blank" title="slideshare" alt="slideshare">
+                <span class="n-footer__social-link-text">slideshare</span>
+                <svg class="n-icon-slideshare n-footer__social-link-icon" aria-labelledby="title">
+                  <title>slideshare@</title>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink"
+                    xlink:href="/us-en/cloud-manager-relnotes/common/svg/sprite.svg#slideshare"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
 
-      </div><!-- Elasticsearch JS -->
-      <script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/bundle.js'></script>
-
-      <!-- Syntax Highlighting -->
+      </div><!-- Elasticsearch JS --><script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/bundle.js'></script><!-- Syntax Highlighting -->
       <script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/prism.js'></script>
       <script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/prism-curl.js'></script>
     </div>
