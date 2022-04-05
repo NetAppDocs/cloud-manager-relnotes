@@ -93,8 +93,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
 
-  <!-- Used for Product Family Page Sidebar Visibility --><link rel="stylesheet" href='/us-en/cloud-manager-relnotes/css/product-family.css' type="text/css">
-  <script src='/us-en/cloud-manager-relnotes/js/product-family.js'></script><!-- Used to import Promise for IE. Required for SearchKit -->
+  <!-- Used for Product Family Page Sidebar Visibility --><!-- Used to import Promise for IE. Required for SearchKit -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bluebird/3.3.5/bluebird.min.js"></script><script src='/us-en/cloud-manager-relnotes/js/na-search.js'></script><script src='/us-en/cloud-manager-relnotes/js/na-pagenav.js'></script><link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/prism.css' type='text/css'>
   <link rel='stylesheet' href='/us-en/cloud-manager-relnotes/css/prism-netapp.css' type='text/css'>
 
@@ -169,11 +168,8 @@
         <header class="site-header" id="banner">
   
   <!-- Start Page Toolbar -->
-  <div class="page-nav-toolbar"><div class="page-nav-contribute"  >
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-relnotes/issues/new?body=Page%3A%20[Recent changes in Cloud Manager](https://docs.netapp.com/us-en/cloud-manager-relnotes/whats-new.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-relnotes/images/discuss-sm.svg" class="github-icon" />Request doc changes</a>
-      <a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-relnotes/blob/main/whats-new.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-relnotes/images/edit-sm.svg" class="github-icon" />Edit this page</a>
-      <a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-relnotes/images/article-sm.svg" class="github-icon" />Learn how to contribute</a>
-    </div>
+  
+  <div class="page-nav-toolbar"><div class="page-nav-contribute"><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-relnotes/issues/new?body=Page%3A%20[Recent changes in Cloud Manager](https://docs.netapp.com/us-en/cloud-manager-relnotes/whats-new.html)" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-relnotes/images/discuss-sm.svg" class="github-icon" />Request doc changes</a><a target="_blank" href="https://github.com/NetAppDocs/cloud-manager-relnotes/blob/main/whats-new.adoc" class="page-nav-contribute-link" role="button"><img src="/us-en/cloud-manager-relnotes/images/edit-sm.svg" class="github-icon" />Edit this page</a><a target="_blank" href="https://docs.netapp.com/us-en/contribute/" class="page-nav-contribute-link"  ><img src="/us-en/cloud-manager-relnotes/images/article-sm.svg" class="github-icon" />Learn how to contribute</a></div>
     <div class="page-nav-container">
       <nav class="page-nav-fixed">
         <div class="page-nav-title">ON THIS PAGE</div>
@@ -183,6 +179,7 @@
       </nav>
     </div>
   </div>
+  
   
   <!-- Start top_hat -->
   <div class="n-top-hat">
@@ -897,7 +894,42 @@
 <h2 id="cloud-sync">Cloud Sync</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="03-mar-2022">03 Mar 2022</h3>
+<h3 id="3-apr-2022">3 Apr 2022</h3>
+<div class="sect3">
+<h4 id="data-broker-group-enhancements">Data broker group enhancements</h4>
+<div class="paragraph">
+<p>We made several enhancements to data broker groups:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can now move a data broker to a new or existing group.</p>
+</li>
+<li>
+<p>You can now update the proxy configuration for a data broker.</p>
+</li>
+<li>
+<p>Finally, you can also delete data broker groups.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-sync/task_sync_managing_data_brokers.html">Learn how to manage data broker groups</a>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>You can now filter the contents of the Sync Dashboard to more easily find sync relationships that match a certain status. For example, you can filter on sync relationships that have a failed status</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-sync-filter.png" alt="A screenshot that shows the Filter by sync status option at the top of the dashboard."></span></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-mar-2022">3 Mar 2022</h3>
 <div class="sect3">
 <h4 id="sorting-in-the-dashboard">Sorting in the dashboard</h4>
 <div class="paragraph">
@@ -943,88 +975,7 @@
 <p>You can now download a PDF of a report.</p>
 </div>
 <div class="paragraph">
-<p><a href="task-managing-reports.html">Learn about reports</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="02-jan-2022">02 Jan 2022</h3>
-<div class="sect3">
-<h4 id="new-box-sync-relationships">New Box sync relationships</h4>
-<div class="paragraph">
-<p>Two new sync relationships are supported:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Box to Azure NetApp Files</p>
-</li>
-<li>
-<p>Box to Amazon FSx for ONTAP</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="reference-supported-relationships.html">View the list of supported sync relationships</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="relationship-names">Relationship names</h4>
-<div class="paragraph">
-<p>You can now provide a meaningful name to each of your sync relationships to more easily identify the purpose of each relationship. You can add the name when you create the relationship and any time after.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-sync-relationship-edit-name.png" alt="A screenshot of a sync relationship that shows the edit button that&#8217;s next to the name of a relationship."></span></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="s3-private-links">S3 private links</h4>
-<div class="paragraph">
-<p>When you sync data to or from Amazon S3, you can choose whether to use an S3 private link. When the data broker copies data from the source to the target, it goes through the private link.</p>
-</div>
-<div class="paragraph">
-<p>Note that the IAM role associated with your data broker will need the following permission to use this feature:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribeVpcEndpoints"</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>This permission is automatically added to any new data brokers that you create.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="glacier-instant-retrieval">Glacier Instant Retrieval</h4>
-<div class="paragraph">
-<p>You can now choose the <em>Glacier Instant Retrieval</em> storage class when Amazon S3 is the target in a sync relationship.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="acls-from-object-storage-to-smb-shares">ACLs from object storage to SMB shares</h4>
-<div class="paragraph">
-<p>Cloud Sync now supports copying ACLs from object storage to SMB shares. Previously, we only supported copying ACLs from an SMB share to object storage.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="sftp-to-s3">SFTP to S3</h4>
-<div class="paragraph">
-<p>Creating a sync relationship from SFTP to Amazon S3 is now supported in the user interface. This sync relationship was previously supported with the API only.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="table-view-enhancement">Table view enhancement</h4>
-<div class="paragraph">
-<p>We redesigned the table view on the Dashboard for ease of use. If you click <strong>More info</strong>, Cloud Sync filters the dashboard to show you more information about that specific relationship.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="./media/screenshot-sync-table.png" alt="A screenshot of the table view in the Dashboard."></span></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="support-for-jarkarta-region">Support for Jarkarta region</h4>
-<div class="paragraph">
-<p>Cloud Sync now supports deploying the data broker in the AWS Asia Pacific (Jakarta) region.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-sync/task-managing-reports.html">Learn more about reports</a>.</p>
 </div>
 </div>
 </div>
@@ -1640,7 +1591,10 @@ The existing Kubernetes service (available through the <strong>K8s</strong> tab)
   </div>
 </footer>
 
-      </div><!-- Elasticsearch JS --><script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/bundle.js'></script><!-- Syntax Highlighting -->
+      </div><!-- Elasticsearch JS -->
+      <script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/bundle.js'></script>
+
+      <!-- Syntax Highlighting -->
       <script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/prism.js'></script>
       <script type="text/javascript" src='/us-en/cloud-manager-relnotes/js/prism-curl.js'></script>
     </div>
