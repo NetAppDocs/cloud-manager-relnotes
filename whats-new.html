@@ -507,63 +507,99 @@
 <p>This section describes new features related to Cloud Manager&#8217;s administration features: Accounts, Connectors, cloud provider credentials, and more.</p>
 </div>
 <div class="sect2">
-<h3 id="27-february-2022">27 February 2022</h3>
+<h3 id="2-may-2022">2 May 2022</h3>
 <div class="sect3">
-<h4 id="connector-enhancement-in-google-cloud">Connector enhancement in Google Cloud</h4>
-<div class="paragraph">
-<p>When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn&#8217;t display any policies that didn&#8217;t have a target tag.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="30-january-2022">30 January 2022</h3>
-<div class="sect3">
-<h4 id="reminder-about-netapp-support-site-accounts">Reminder about NetApp Support Site accounts</h4>
-<div class="paragraph">
-<p>As a reminder, NetApp now uses Microsoft Azure Active Directory as the identity provider for authentication services specific to support and licensing. As a result of this update, Cloud Manager will prompt you to update the NetApp Support Site (NSS) credentials for any existing accounts that you previously added.</p>
-</div>
-<div class="paragraph">
-<p>If you haven&#8217;t yet migrated your NSS account to IDaaS, you first need to migrate the account and then update your credentials in Cloud Manager.</p>
-</div>
+<h4 id="connector-3-9-18">Connector 3.9.18</h4>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/FAQs_for_NetApp_adoption_of_MS_Azure_AD_B2C_for_login" target="_blank" rel="noopener">Learn more about NetApp&#8217;s use of Microsoft Azure AD for identity management</a></p>
+<p>The Connector is now supported in the following Google Cloud regions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Delhi (asia-south2)</p>
 </li>
 <li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-adding-nss-accounts.html#update-an-nss-account-for-the-new-authentication-method">Learn how to update an NSS account to the new authentication method</a></p>
+<p>Melbourne (australia-southeast2)</p>
+</li>
+<li>
+<p>Milan (europe-west8)</p>
+</li>
+<li>
+<p>Santiago (southamerica-west1)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions</a></p>
+</div>
+</li>
+<li>
+<p>When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that&#8217;s associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.</p>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-google-cloud-service-account.png" alt="A screenshot of the service account field"></span></p>
+</div>
+</li>
+<li>
+<p>We have certified the Connector in Google Cloud on a VM instance with an OS that supports <a href="https://cloud.google.com/compute/shielded-vm/docs/shielded-vm" target="_blank" rel="noopener">Shielded VM features</a></p>
+</li>
+<li>
+<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-may-2022" target="_blank" rel="noopener">Learn about those enhancements</a></p>
+</li>
+<li>
+<p>New AWS permissions are required for the Connector to deploy Cloud Volumes ONTAP.</p>
+<div class="paragraph">
+<p>The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These permissions are now required to optimize how Cloud Manager creates the placement group.</p>
+</div>
+<div class="paragraph">
+<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. You can find the latest list of permissions on the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager policies page</a>.</p>
+</div>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="2-january-2022">2 January 2022</h3>
+<h3 id="3-april-2022">3 April 2022</h3>
 <div class="sect3">
-<h4 id="reduced-endpoints-for-the-connector">Reduced endpoints for the Connector</h4>
+<h4 id="connector-3-9-17">Connector 3.9.17</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>You can now create a Connector by letting Cloud Manager assume an IAM role that you set up in your environment. This authentication method is more secure than sharing an AWS access key and secret key.</p>
 <div class="paragraph">
-<p>We reduced the number of endpoints that a Connector needs to contact in order to manage resources and processes within your public cloud environment.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-creating-connectors-aws.html">Learn how to create a Connector using an IAM role</a>.</p>
 </div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-networking-cloud-manager.html#outbound-internet-access">View the list of required endpoints</a>.</p>
+</li>
+<li>
+<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#3-april-2022" target="_blank" rel="noopener">Learn about those enhancements</a></p>
+</li>
+</ul>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="27-february-2022">27 February 2022</h3>
 <div class="sect3">
-<h4 id="ebs-disk-encryption-for-the-connector">EBS disk encryption for the Connector</h4>
-<div class="paragraph">
-<p>When you deploy a new Connector in AWS from Cloud Manager, you can now choose to encrypt the Connector&#8217;s EBS disks using the default master key or a managed key.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-connector-disk-encryption.png" alt="A screenshot that shows the disk encryption option when creating a Connector in AWS."></span></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="email-address-for-nss-accounts">Email address for NSS accounts</h4>
-<div class="paragraph">
-<p>Cloud Manager can now display the email address that&#8217;s associated with a NetApp Support Site account.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-nss-display-email.png" alt="A screenshot that shows the action menu for a NetApp Support Site account which includes the ability to display the email address."></span></p>
+<h4 id="connector-3-9-16">Connector 3.9.16</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>When you create a new Connector in Google Cloud, Cloud Manager will now display all of your existing firewall policies. Previously, Cloud Manager wouldn&#8217;t display any policies that didn&#8217;t have a target tag.</p>
+</li>
+<li>
+<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#27-february-2022" target="_blank" rel="noopener">Learn about those enhancements</a></p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -725,7 +761,7 @@
 <h2 id="cloud-backup">Cloud Backup</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="2-may-2022">2 May 2022</h3>
+<h3 id="2-may-2022-2">2 May 2022</h3>
 <div class="sect3">
 <h4 id="search-restore-is-now-supported-with-backup-files-in-google-cloud-storage">Search &amp; Restore is now supported with backup files in Google Cloud Storage</h4>
 <div class="paragraph">
@@ -919,7 +955,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="3-april-2022">3 April 2022</h3>
+<h3 id="3-april-2022-2">3 April 2022</h3>
 <div class="sect3">
 <h4 id="data-broker-group-enhancements">Data broker group enhancements</h4>
 <div class="paragraph">
@@ -1026,7 +1062,135 @@
 <h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="3-april-2022-2">3 April 2022</h3>
+<h3 id="2-may-2022-3">2 May 2022</h3>
+<div class="paragraph">
+<p>The following changes were introduced with the 3.9.18 release of the Connector.</p>
+</div>
+<div class="sect3">
+<h4 id="cloud-volumes-ontap-9-11-0">Cloud Volumes ONTAP 9.11.0</h4>
+<div class="paragraph">
+<p>Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.0.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes" target="_blank" rel="noopener">Learn about the new features included in this release of Cloud Volumes ONTAP</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="enhancement-to-mediator-upgrades">Enhancement to mediator upgrades</h4>
+<div class="paragraph">
+<p>When Cloud Manager upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="k8s-tab-has-been-removed">K8s tab has been removed</h4>
+<div class="paragraph">
+<p>The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html" target="_blank" rel="noopener">Learn about Kubernetes data management in Cloud Manager</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="annual-contract-in-azure">Annual contract in Azure</h4>
+<div class="paragraph">
+<p>The Essentials and Professional packages are now available in Azure through an annual contract. You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.</p>
+</div>
+<div class="paragraph">
+<p>After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">Learn more about licensing</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="s3-glacier-instant-retrieval">S3 Glacier Instant Retrieval</h4>
+<div class="paragraph">
+<p>You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data">Learn how to change the storage class for tiered data</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-aws-permissions-required-for-the-connector">New AWS permissions required for the Connector</h4>
+<div class="paragraph">
+<p>The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribePlacementGroups",
+"iam:GetRolePolicy",</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>These permissions are now required to optimize how Cloud Manager creates the placement group.</p>
+</div>
+<div class="paragraph">
+<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. You can find the latest list of permissions on the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager policies page</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-google-cloud-region-support">New Google Cloud region support</h4>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delhi (asia-south2)</p>
+</li>
+<li>
+<p>Melbourne (australia-southeast2)</p>
+</li>
+<li>
+<p>Milan (europe-west8) - single node only</p>
+</li>
+<li>
+<p>Santiago (southamerica-west1) - single node only</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions for Cloud Volumes ONTAP</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="support-for-n2-standard-16-in-google-cloud">Support for n2-standard-16 in Google Cloud</h4>
+<div class="paragraph">
+<p>The n2-standard-16 machine type is now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.10.1 release.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html" target="_blank" rel="noopener">View supported configurations for Cloud Volumes ONTAP in Google Cloud</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="enhancements-to-google-cloud-firewall-policies">Enhancements to Google Cloud firewall policies</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>When you create a Cloud Volumes ONTAP HA pair in Google Cloud, Cloud Manager will now display all existing firewall policies in a VPC.</p>
+<div class="paragraph">
+<p>Previously, Cloud Manager wouldn&#8217;t display any policies in VPC-1, VPC-2, or VPC-3 that didn&#8217;t have a target tag.</p>
+</div>
+</li>
+<li>
+<p>When you create a Cloud Volumes ONTAP single node system in Google Cloud, you can now choose whether you want the predefined firewall policy to allow traffic within the selected VPC only (recommended) or all VPCs.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="enhancement-to-google-cloud-service-accounts">Enhancement to Google Cloud service accounts</h4>
+<div class="paragraph">
+<p>When you select the Google Cloud service account to use with Cloud Volumes ONTAP, Cloud Manager now displays the email address that&#8217;s associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png" alt="A screenshot of the service account field"></span></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="3-april-2022-3">3 April 2022</h3>
 <div class="sect3">
 <h4 id="system-manager-link-has-been-removed">System Manager link has been removed</h4>
 <div class="paragraph">
@@ -1047,7 +1211,10 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="27-february-2022-connector-3-9-16">27 February 2022 (Connector 3.9.16)</h3>
+<h3 id="27-february-2022-3">27 February 2022</h3>
+<div class="paragraph">
+<p>The following changes were introduced with the 3.9.16 release of the Connector.</p>
+</div>
 <div class="sect3">
 <h4 id="redesigned-volume-wizard">Redesigned volume wizard</h4>
 <div class="paragraph">
@@ -1055,37 +1222,6 @@
 </div>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">Learn how to create volumes on a specific aggregate</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="9-february-2022-3">9 February 2022</h3>
-<div class="sect3">
-<h4 id="marketplace-updates">Marketplace updates</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The Essentials package and Professional package are now available in the AWS and Google Cloud Marketplaces.</p>
-<div class="paragraph">
-<p>These by-capacity charging methods enable you to pay by the hour or to purchase an annual contract directly from your cloud provider. You still have the option to purchase a by-capacity license directly from NetApp.</p>
-</div>
-<div class="paragraph">
-<p>If you have an existing subscription in a cloud marketplace, you&#8217;re automatically subscribed to these new offerings as well. You can choose by-capacity charging when you deploy a new Cloud Volumes ONTAP working environment.</p>
-</div>
-<div class="paragraph">
-<p>If you&#8217;re a new customer, Cloud Manager will prompt you to subscribe when you create a new working environment.</p>
-</div>
-</li>
-<li>
-<p>By-node licensing via the AWS and Google Cloud Marketplaces is deprecated and no longer available for new subscribers. This includes annual contracts and hourly subscriptions (Explore, Standard, and Premium).</p>
-<div class="paragraph">
-<p>This charging method is still available for existing customers who have an active subscription.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">Learn more about the licensing options for Cloud Volumes ONTAP</a>.</p>
 </div>
 </div>
 </div>
@@ -1246,7 +1382,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="27-february-2022-3">27 February 2022</h3>
+<h3 id="27-february-2022-4">27 February 2022</h3>
 <div class="sect3">
 <h4 id="support-for-kubernetes-clusters-in-google-cloud">Support for Kubernetes clusters in Google Cloud</h4>
 <div class="paragraph">
@@ -1322,7 +1458,7 @@
 <h2 id="on-prem-ontap-clusters">On-prem ONTAP clusters</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="27-february-2022-4">27 February 2022</h3>
+<h3 id="27-february-2022-5">27 February 2022</h3>
 <div class="sect3">
 <h4 id="an-on-premises-ontap-tab-is-available-in-the-digital-wallet">An "On-Premises ONTAP" tab is available in the Digital Wallet.</h4>
 <div class="paragraph">
@@ -1372,7 +1508,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="9-february-2022-4">9 February 2022</h3>
+<h3 id="9-february-2022-3">9 February 2022</h3>
 <div class="sect3">
 <h4 id="new-ransomware-protection-service">New Ransomware Protection service</h4>
 <div class="paragraph">
