@@ -1017,11 +1017,20 @@
 <h2 id="cloud-tiering">Cloud Tiering</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="3-may-2022">3 May 2022</h3>
+<div class="sect3">
+<h4 id="cloud-tiering-license-support-for-additional-cluster-configurations">Cloud Tiering license support for additional cluster configurations</h4>
+<div class="paragraph">
+<p>Cloud Tiering licenses can now be shared with your clusters that are in Tiering Mirror configurations (not including MetroCluster configurations) and with clusters that are tiered to IBM Cloud Object Storage. You no longer have to use the deprecated FabricPool licenses for these scenarios. This makes it easier to use the "floating" Cloud Tiering licenses on more of your clusters. <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-licensing-cloud-tiering.html#apply-cloud-tiering-licenses-to-clusters-in-special-configurations">See how to license and configure these types of clusters.</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="4-april-2022-2">4 April 2022</h3>
 <div class="sect3">
 <h4 id="amazon-s3-glacier-instant-retrieval-storage-class-is-now-available">Amazon S3 Glacier Instant Retrieval storage class is now available</h4>
 <div class="paragraph">
-<p>When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the <em>Standard</em> storage class to <em>Glacier Instant Retrieval</em> after a certain number of days. This will help reduce your AWS infrastructure costs.</p>
+<p>When setting up Cloud Tiering, now you can configure a lifecycle rule so your inactive data transitions from the <em>Standard</em> storage class to <em>Glacier Instant Retrieval</em> after a certain number of days. This will help reduce your AWS infrastructure costs. <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/reference-aws-support.html">See the supported S3 storage classes.</a></p>
 </div>
 </div>
 <div class="sect3">
@@ -1046,15 +1055,6 @@
 <h4 id="tier-inactive-data-from-on-prem-ontap-clusters-to-s3-compatible-object-storage">Tier inactive data from on-prem ONTAP clusters to S3-compatible object storage</h4>
 <div class="paragraph">
 <p>Now you can tier inactive data to any Object Storage service which uses the Simple Storage Service (S3) protocol. <a href="https://docs.netapp.com/us-en/cloud-manager-tiering/task-tiering-onprem-s3-compat.html">See how to tier data to S3-compatible object storage</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="7-july-2021">7 July 2021</h3>
-<div class="sect3">
-<h4 id="the-connector-can-be-running-on-premises-when-tiering-data-to-azure-blob-storage">The Connector can be running on premises when tiering data to Azure Blob storage</h4>
-<div class="paragraph">
-<p>You are no longer required to use a Connector installed in an Azure VNet. Your Connector can be running on a host in your premises when tiering data to Azure Blob storage.</p>
 </div>
 </div>
 </div>
