@@ -78,7 +78,7 @@ $(document).ready(function() {
     if ($('#version-dropdown-new').length && $('#version-dropdown-new').isVisibleAndInViewport()) {
       h += $('#version-dropdown-new').outerHeight(true);
     }
-    
+
     if ($('.n-footer').length && $('.n-footer').isVisibleAndInViewport()) {
       h += $('.n-footer').outerHeight(true);
     }
