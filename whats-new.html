@@ -467,7 +467,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-05-12 20:11:35 +0000">05/12/2022</time>
+    <time datetime="2022-06-08 16:06:51 +0000">06/08/2022</time>
     
   
 
@@ -777,6 +777,18 @@
 <div class="sect1">
 <h2 id="cloud-backup">Cloud Backup</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="8-june-2022">8 June 2022</h3>
+<div class="sect3">
+<h4 id="cloud-backup-for-virtual-machines-1-1-0-is-now-ga">Cloud Backup for Virtual Machines 1.1.0 is now GA</h4>
+<div class="paragraph">
+<p>You can protect data on your virtual machines by integrating the SnapCenter Plug-in for VMware vSphere with Cloud Manager. You can back up datastores to the cloud and restore virtual machines back to the on-premises SnapCenter Plug-in for VMware vSphere with ease.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-vm-data.html">Learn more about protecting virtual machines to cloud</a>.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="2-may-2022-2">2 May 2022</h3>
 <div class="sect3">
@@ -1117,6 +1129,103 @@
 <h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="7-june-2022-2">7 June 2022</h3>
+<div class="paragraph">
+<p>The following changes were introduced with the 3.9.19 release of the Connector.</p>
+</div>
+<div class="sect3">
+<h4 id="cloud-volumes-ontap-9-11-1">Cloud Volumes ONTAP 9.11.1</h4>
+<div class="paragraph">
+<p>Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.1, which includes support for new features and additional cloud provider regions.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes" target="_blank" rel="noopener">Learn about the new features included in this release of Cloud Volumes ONTAP</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-advanced-view">New Advanced View</h4>
+<div class="paragraph">
+<p>If you need to perform advanced management of Cloud Volumes ONTAP, you can do so using ONTAP System Manager, which is a management interface that’s provided with an ONTAP system. We have included the System Manager interface directly inside Cloud Manager so that you don’t need to leave Cloud Manager for advanced management.</p>
+</div>
+<div class="paragraph">
+<p>This Advanced View is available as a Preview with Cloud Volumes ONTAP 9.10.0 and later. We plan to refine this experience and add enhancements in upcoming releases. Please send us feedback by using the in-product chat.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-administer-advanced-view.html">Learn more about the Advanced View</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="support-for-amazon-ebs-elastic-volumes">Support for Amazon EBS Elastic Volumes</h4>
+<div class="paragraph">
+<p>Support for the Amazon EBS Elastic Volumes feature with a Cloud Volumes ONTAP aggregate provides better performance and additional capacity, while enabling Cloud Manager to automatically increase the underlying disk capacity as needed.</p>
+</div>
+<div class="paragraph">
+<p>Support for Elastic Volumes is available starting with <em>new</em> Cloud Volumes ONTAP 9.11.0 systems and with gp3 and io1 EBS disk types.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-aws-elastic-volumes.html">Learn more about support for Elastic Volumes</a>.</p>
+</div>
+<div class="paragraph">
+<p>Note that support for Elastic Volumes requires new AWS permissions for the Connector:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribeVolumesModifications",
+"ec2:ModifyVolume",</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. You can find the latest list of permissions on the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager policies page</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="support-for-deploying-ha-pairs-in-shared-aws-subnets">Support for deploying HA pairs in shared AWS subnets</h4>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP 9.11.1 includes support for AWS VPC sharing. This release of the Connector enables you to deploy an HA pair in an AWS shared subnet when using the API.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-deploy-aws-shared-vpc.html">Learn how to deploy an HA pair in a shared subnet</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="limited-network-access-when-using-service-endpoints">Limited network access when using service endpoints</h4>
+<div class="paragraph">
+<p>Cloud Manager now limits network access when using a VNet service endpoint for connections between Cloud Volumes ONTAP and storage accounts. Cloud Manager uses a service endpoint if you disable Azure Private Link connections.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-enabling-private-link.html">Learn more about Azure Private Link connections with Cloud Volumes ONTAP</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="support-for-creating-storage-vms-in-google-cloud">Support for creating storage VMs in Google Cloud</h4>
+<div class="paragraph">
+<p>Multiple storage VMs are now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.11.1 release. Starting with this release of the Connector, Cloud Manager enables you to create storage VMs on Cloud Volumes ONTAP HA pairs in Google Cloud by using the API.</p>
+</div>
+<div class="paragraph">
+<p>Support for creating storage VMs requires new Google Cloud permissions for the Connector:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">- compute.instanceGroups.get
+- compute.addresses.get</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that you must use the ONTAP CLI or System Manager to create a storage VM on a single node system.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-limits-gcp.html#storage-vm-limits" target="_blank" rel="noopener">Learn more about storage VM limits in Google Cloud</a></p>
+</li>
+<li>
+<p><a href="task-managing-svms-gcp.html">Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud</a></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="2-may-2022-3">2 May 2022</h3>
 <div class="paragraph">
 <p>The following changes were introduced with the 3.9.18 release of the Connector.</p>
@@ -1262,21 +1371,6 @@
 </div>
 <div class="paragraph">
 <p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">Learn about pricing for WORM storage</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="27-february-2022-2">27 February 2022</h3>
-<div class="paragraph">
-<p>The following changes were introduced with the 3.9.16 release of the Connector.</p>
-</div>
-<div class="sect3">
-<h4 id="redesigned-volume-wizard">Redesigned volume wizard</h4>
-<div class="paragraph">
-<p>The create new volume wizard that we recently introduced is now available when creating a volume on a specific aggregate from the <strong>Advanced allocation</strong> option.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-create-volumes.html">Learn how to create volumes on a specific aggregate</a>.</p>
 </div>
 </div>
 </div>
@@ -1506,12 +1600,12 @@
 <h2 id="on-prem-ontap-clusters">On-prem ONTAP clusters</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="7-june-2022-2">7 June 2022</h3>
+<h3 id="7-june-2022-3">7 June 2022</h3>
 <div class="paragraph">
 <p>The following change was introduced with the 3.9.19 release of the Connector.</p>
 </div>
 <div class="sect3">
-<h4 id="new-advanced-view">New Advanced View</h4>
+<h4 id="new-advanced-view-2">New Advanced View</h4>
 <div class="paragraph">
 <p>If you need to perform advanced management of an ONTAP on-premises cluster, you can do so using ONTAP System Manager, which is a management interface that&#8217;s provided with an ONTAP system. We have included the System Manager interface directly inside Cloud Manager so that you don&#8217;t need to leave Cloud Manager for advanced management.</p>
 </div>
@@ -1524,7 +1618,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="27-february-2022-3">27 February 2022</h3>
+<h3 id="27-february-2022-2">27 February 2022</h3>
 <div class="sect3">
 <h4 id="an-on-premises-ontap-tab-is-available-in-the-digital-wallet">An "On-Premises ONTAP" tab is available in the Digital Wallet.</h4>
 <div class="paragraph">
