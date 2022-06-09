@@ -788,6 +788,52 @@
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-vm-data.html">Learn more about protecting virtual machines to cloud</a>.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="cloud-restore-instance-is-not-needed-for-ontap-browse-restore-functionality">Cloud Restore instance is not needed for ONTAP Browse &amp; Restore functionality</h4>
+<div class="paragraph">
+<p>A separate Cloud Restore instance/virtual machine used to be required for file-level Browse &amp; Restore operations from S3 and Blob storage. This instance shut down when not in use&#8201;&#8212;&#8201;but it still added some time and cost when restoring files. This functionality has been replaced with a no-cost container that gets deployed on the Connector when needed. It provides the following advantages:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>No added cost for file-level restore operations</p>
+</li>
+<li>
+<p>Faster file-level restore operations</p>
+</li>
+<li>
+<p>Support for Browse &amp; Restore operations for files from the cloud when the Connector is installed on your premises</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Note that the Cloud Restore instance/VM will be removed automatically if you were previously using it.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="browse-restore-support-for-files-from-google-cloud-and-storagegrid-storage">Browse &amp; Restore support for files from Google Cloud and StorageGRID storage</h4>
+<div class="paragraph">
+<p>With the addition of the container for Browse &amp; Restore operations (as described above), file restore operations now can be performed from backup files stored in Google Cloud and StorageGRID systems. Now Browse &amp; Restore can be used to restore files across all public cloud providers and from StorageGRID. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-browse-restore">See how to use Browse &amp; Restore to restore volumes and files from your ONTAP backups</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="drag-and-drop-to-enable-cloud-backup-to-s3-storage">Drag and drop to enable Cloud Backup to S3 storage</h4>
+<div class="paragraph">
+<p>If the Amazon S3 destination for your backups exists as a working environment on the Canvas, you can drag your on-prem ONTAP cluster or Cloud Volumes ONTAP system (installed in AWS) onto the Amazon S3 working environment to initiate the setup wizard.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="automatically-apply-a-backup-policy-to-newly-created-volumes-in-kubernetes-clusters">Automatically apply a backup policy to newly created volumes in Kubernetes clusters</h4>
+<div class="paragraph">
+<p>If you added new persistent volumes to your Kubernetes clusters after Cloud Backup was activated, in the past you needed to remember to configure backups for those volumes. Now you can select a policy that will be applied automatically to newly created volumes <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-manage-backups-kubernetes.html#setting-a-backup-policy-to-be-assigned-to-new-volumes">from the <em>Backup Settings</em> page</a> for clusters that have already activated Cloud Backup.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="cloud-backup-apis-are-now-available-for-managing-backup-and-restore-operations">Cloud Backup APIs are now available for managing backup and restore operations</h4>
+<div class="paragraph">
+<p>The APIs are available at <a href="https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html" class="bare">https://docs.netapp.com/us-en/cloud-manager-automation/cbs/overview.html</a>. See <a href="api-backup-restore.html">this page</a> for an overview of the APIs.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
 <h3 id="2-may-2022-2">2 May 2022</h3>
@@ -831,13 +877,13 @@
 <div class="sect3">
 <h4 id="cloud-backup-for-applications-1-1-0-powered-by-snapcenter-is-now-ga">Cloud Backup for Applications 1.1.0 (powered by SnapCenter) is now GA</h4>
 <div class="paragraph">
-<p>The new Cloud Backup for Applications capability enables you to offload existing application consistent Snapshots (backups) for Oracle and Microsoft SQL from on-premises primary storage to cloud object storage in AWS S3 or Azure Blob.</p>
+<p>The new Cloud Backup for Applications capability enables you to offload existing application consistent Snapshots (backups) for Oracle and Microsoft SQL from on-premises primary storage to cloud object storage in Amazon S3 or Azure Blob.</p>
 </div>
 <div class="paragraph">
 <p>When required, you can restore this data from cloud to on-premises.</p>
 </div>
 <div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-app-data-to-cloud.html">Learn more about protecting on-premises applications data to cloud</a>.</p>
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-app-data-to-cloud.html">Learn more about protecting on-premises applications data to the cloud</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -845,19 +891,6 @@
 <div class="paragraph">
 <p>Now you can search for a volume or file across <strong>all ONTAP backup files</strong> by partial or full volume name, partial or full file name, size range, and additional search filters. This is a great new way to find the data you want to restore if you are not sure which cluster or volume was the source for the data. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore">Learn how to use Search &amp; Restore</a>.</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="3-march-2022-2">3 March 2022</h3>
-<div class="sect3">
-<h4 id="ability-to-back-up-persistent-volumes-from-your-gke-kubernetes-clusters-to-google-cloud-storage">Ability to back up persistent volumes from your GKE Kubernetes clusters to Google Cloud storage</h4>
-<div class="paragraph">
-<p>If your GKE cluster has NetApp Astra Trident installed, and it&#8217;s using Cloud Volumes ONTAP for GCP as backend storage for the cluster, then you can back up and restore your persistent volumes to and from Google Cloud storage. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-kubernetes-to-gcp.html">Go here for details</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-beta-capability-to-use-cloud-data-sense-to-scan-your-cloud-backup-files-has-been-discontinued-in-this-release">The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued in this release</h4>
-
 </div>
 </div>
 </div>
@@ -954,7 +987,7 @@
 </div>
 </div>
 <div class="sect3">
-<h4 id="the-beta-capability-to-use-cloud-data-sense-to-scan-your-cloud-backup-files-has-been-discontinued-in-this-release-2">The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued in this release</h4>
+<h4 id="the-beta-capability-to-use-cloud-data-sense-to-scan-your-cloud-backup-files-has-been-discontinued-in-this-release">The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued in this release</h4>
 
 </div>
 </div>
