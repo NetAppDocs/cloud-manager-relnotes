@@ -899,6 +899,45 @@
 <h2 id="cloud-data-sense">Cloud Data Sense</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="12-june-2022">12 June 2022</h3>
+<div class="sect3">
+<h4 id="now-you-can-download-the-results-from-the-data-investigation-page-as-a-json-report">Now you can download the results from the Data Investigation page as a .JSON report</h4>
+<div class="paragraph">
+<p>After you have filtered the data in the Data Investigation page, now you can save the data as a report in a .JSON file that you can export to an NFS Share, in addition to saving the data to a .CSV file on your local system. Make sure Data Sense has the correct permissions for export access. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-generating-compliance-reports.html#data-investigation-report">See how to create reports from the Data Investigation page</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ability-to-uninstall-data-sense-from-the-data-sense-ui">Ability to uninstall Data Sense from the Data Sense UI</h4>
+<div class="paragraph">
+<p>You can uninstall Data Sense to permanently remove the software from the host, and in the case of a cloud deployment, delete the virtual machine / instance on which Data Sense was deployed. Deleting the instance permanently deletes all the indexed information Data Sense has scanned. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-uninstall-data-sense.html">See how</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="audit-logging-is-now-available-to-track-the-history-of-actions-that-data-sense-has-performed">Audit logging is now available to track the history of actions that Data Sense has performed</h4>
+<div class="paragraph">
+<p>The audit log tracks the management activities that Data Sense has performed on files from all the working environments and data sources that Data Sense is scanning. The activities could be user generated (delete a file, create a policy, etc.) or policy generated (automatically add labels to files, automatically delete files, etc.).</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-audit-data-sense-actions.html">See more details about the audit log</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-filter-for-number-of-sensitive-identifiers-in-the-data-investigation-page">New Filter for number of sensitive identifiers in the Data Investigation page</h4>
+<div class="paragraph">
+<p>The “Number of identifiers” filter enables you to list the files that have a certain number of sensitive identifiers - including both personal data and sensitive personal data. You can select a range like 1-10 or 501-1000 to view only the files that contain that number of sensitive identifiers.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-controlling-private-data.html#filtering-data-in-the-data-investigation-page">See the list of all the filters you can use to investigate your data</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="now-you-can-edit-existing-policies-that-you-created">Now you can edit existing policies that you created</h4>
+<div class="paragraph">
+<p>If you need to make a change to a custom policy that you created in the past, now you can edit the policy instead of creating a new policy. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-org-private-data.html#editing-policies">See how to edit a policy</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="11-may-2022">11 May 2022</h3>
 <div class="sect3">
 <h4 id="support-added-for-scanning-data-in-google-drive-accounts">Support added for scanning data in Google Drive accounts</h4>
@@ -951,44 +990,6 @@
 <div class="paragraph">
 <p>The global Active Directory server you integrate with Data Sense can be an LDAP Server now in addition to the previously supported DNS Server. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-add-active-directory-datasense.html">Go here for details</a>.</p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="15-march-2022">15 March 2022</h3>
-<div class="sect3">
-<h4 id="new-filter-to-show-the-files-to-which-a-specific-user-or-a-group-has-read-or-write-permissions">New Filter to show the files to which a specific user or a group has read or write permissions</h4>
-<div class="paragraph">
-<p>A new Filter called "User / Group Permissions" has been added so you can list the files that a specific user or a group has read and/or write permissions to. You can select one or more user and/or group names - or enter a partial name. This functionality is available for volumes on Cloud Volumes ONTAP, on-prem ONTAP, Azure NetApp Files, Amazon FSx for ONTAP, and File Shares.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="data-sense-can-determine-the-permissions-for-files-in-sharepoint-and-onedrive-accounts">Data Sense can determine the permissions for files in SharePoint and OneDrive accounts</h4>
-<div class="paragraph">
-<p>Data Sense can read the permissions that exist for files that are being scanned in OneDrive accounts and SharePoint accounts now. This information appears in the Investigation pane details for files and in the Open Permissions area in the Governance Dashboard.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="two-additional-types-of-personal-data-can-be-identified-by-data-sense">Two additional types of personal data can be identified by Data Sense</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>French INSEE - The INSEE code is a numerical code used by the French National Institute for Statistics and Economic Studies (INSEE) to identify various entities.</p>
-</li>
-<li>
-<p>Passwords - This information is identified using proximity validation by looking for permutations of the word "password" next to a alphanumeric string. The number of items found will be listed under "Personal Results" in the Compliance Dashboard. You can search for files that contain passwords in the Investigation pane using the Filter <strong>Personal Data &gt; Password</strong>.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="support-for-scanning-onedrive-and-sharepoint-data-when-deployed-in-a-dark-site">Support for scanning OneDrive and SharePoint data when deployed in a dark site</h4>
-<div class="paragraph">
-<p>When you&#8217;ve deployed Cloud Data Sense on a host in an on-premises site that doesn’t have internet access, now you can scan local data from OneDrive accounts or SharePoint accounts. <a href="https://docs.netapp.com/us-en/cloud-manager-data-sense/task-deploy-compliance-dark-site.html#sharepoint_and_onedrive_special_requirements">You&#8217;ll need to allow access to the following endpoints.</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-beta-capability-to-use-cloud-data-sense-to-scan-your-cloud-backup-files-has-been-discontinued-in-this-release">The Beta capability to use Cloud Data Sense to scan your Cloud Backup files has been discontinued in this release</h4>
-
 </div>
 </div>
 </div>
@@ -1677,11 +1678,32 @@
 <h2 id="ransomware-protection">Ransomware Protection</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="12-june-2022-2">12 June 2022</h3>
+<div class="sect3">
+<h4 id="nas-file-system-auditing-status-is-now-tracked-for-your-ontap-storage-vms">NAS file system auditing status is now tracked for your ONTAP storage VMs</h4>
+<div class="paragraph">
+<p>An alert is added to the <em>Cyber Resilience Map</em> if less than 40% of the storage VMs in the working environment have file system auditing enabled. You can view the exact number of SVMs that are not tracking and logging SMB and NFS events into an audit log in the <em>Harden your ONTAP environment</em> panel. Then you can decide whether to enable auditing on those SVMs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="alerts-are-now-displayed-when-on-box-anti-ransomware-is-not-active-for-your-volumes">Alerts are now displayed when on-box anti-ransomware is not active for your volumes</h4>
+<div class="paragraph">
+<p>This information was being reported for on-prem ONTAP systems in the <em>Harden your ONTAP environments</em> panel previously, but now an alert is reported in the <em>Cyber Resilience Map</em> when the on-box anti-ransomware feature is turned on in less than 40% of volumes so you can view this information in the Dashboard.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fsx-for-ontap-systems-are-now-tracked-for-enabling-volume-snapshots">FSx for ONTAP systems are now tracked for enabling volume snapshots</h4>
+<div class="paragraph">
+<p>The <em>Harden your ONTAP environments</em> panel now provides the status of Snapshot copies for volumes on your FSx for ONTAP systems. When less than 40% of the volumes are being protected by snapshots, you will also get an alert in the <em>Cyber Resilience Map</em>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="11-may-2022-2">11 May 2022</h3>
 <div class="sect3">
 <h4 id="new-panel-to-track-the-security-hardening-of-your-ontap-environments">New panel to track the security hardening of your ONTAP environments.</h4>
 <div class="paragraph">
-<p>A new panel "Harden your ONTAP environments" provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a> and to the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html" target="_blank" rel="noopener">ONTAP anti-ransomware feature</a> that proactively detects and warns about abnormal activity.</p>
+<p>A new panel <em>Harden your ONTAP environments</em> provides the status of certain settings in your ONTAP systems that track how secure your deployment is according to the <a href="https://www.netapp.com/pdf.html?item=/media/10674-tr4569.pdf" target="_blank" rel="noopener">NetApp Security Hardening Guide for ONTAP Systems</a> and to the <a href="https://docs.netapp.com/us-en/ontap/anti-ransomware/index.html" target="_blank" rel="noopener">ONTAP anti-ransomware feature</a> that proactively detects and warns about abnormal activity.</p>
 </div>
 <div class="paragraph">
 <p>You can review the recommendations and then decide how you want to address the potential issues. You can follow the steps to change the settings on your clusters, defer the changes to another time, or ignore the suggestion. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#status-of-ontap-systems-hardening">Go here for details</a>.</p>
@@ -1690,34 +1712,22 @@
 <div class="sect3">
 <h4 id="new-panel-to-show-how-different-categories-of-data-are-being-protected-using-cloud-backup">New panel to show how different categories of data are being protected using Cloud Backup.</h4>
 <div class="paragraph">
-<p>This new "Backup Status" panel shows how comprehensively your most important categories of data are backed up in case you need to recover because of a ransomware attack. This data is a visual representation of how many items of a specific category in an environment are backed up by Cloud Backup. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#backup-status-of-your-critical-business-data">Go here for details</a>.</p>
+<p>This new <em>Backup Status</em> panel shows how comprehensively your most important categories of data are backed up in case you need to recover because of a ransomware attack. This data is a visual representation of how many items of a specific category in an environment are backed up by Cloud Backup. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#backup-status-of-your-critical-business-data">Go here for details</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="15-march-2022-2">15 March 2022</h3>
+<h3 id="15-march-2022">15 March 2022</h3>
 <div class="sect3">
 <h4 id="new-panel-to-track-the-permissions-status-of-your-business-critical-data">New panel to track the permissions status of your business critical data</h4>
 <div class="paragraph">
-<p>A new panel "Business critical data permissions analysis" shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business-critical data. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#status-of-permissions-on-your-critical-business-data">Go here for details</a>.</p>
+<p>A new panel <em>Business critical data permissions analysis</em> shows the permissions status of data that is critical for your business. That way you can quickly assess how well you are protecting your business-critical data. <a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/task-analyze-ransomware-data.html#status-of-permissions-on-your-critical-business-data">Go here for details</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="open-permissions-area-now-includes-onedrive-and-sharepoint-accounts">Open Permissions area now includes OneDrive and SharePoint accounts</h4>
 <div class="paragraph">
 <p>The Open Permissions area in the Ransomware Protection Dashboard now includes the permissions that exist for files that are being scanned in OneDrive accounts and SharePoint accounts.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="9-february-2022-2">9 February 2022</h3>
-<div class="sect3">
-<h4 id="new-ransomware-protection-service">New Ransomware Protection service</h4>
-<div class="paragraph">
-<p>The new Ransomware Protection service enables you to view relevant information about cybersecurity and assess how resilient your data is to a cyber attack. It also provides you with a list of alerts and remediations for making your data more secure.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-ransomware/concept-ransomware-protection.html">Learn more about this new service</a>.</p>
 </div>
 </div>
 </div>
