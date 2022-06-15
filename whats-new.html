@@ -778,6 +778,19 @@
 <h2 id="cloud-backup">Cloud Backup</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="14-june-2022">14 June 2022</h3>
+<div class="sect3">
+<h4 id="support-has-been-added-to-back-up-on-premises-ontap-cluster-data-in-sites-without-internet-access">Support has been added to back up on-premises ONTAP cluster data in sites without internet access</h4>
+<div class="paragraph">
+<p>If your on-prem ONTAP cluster resides in a site with no internet access, also known as a dark site or offline site, now you can use Cloud Backup to back up volume data to a NetApp StorageGRID system that resides in the same site. This functionality requires that the Cloud Manager Connector (version 3.9.19 or greater) is also deployed in the offline site.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/task-install-connector-onprem-no-internet.html">See how to install the Connector in your offline site</a>.<br>
+<a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-backup-onprem-private-cloud.html">See how to back up ONTAP data to StorageGRID in your offline site</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="8-june-2022">8 June 2022</h3>
 <div class="sect3">
 <h4 id="cloud-backup-for-virtual-machines-1-1-0-is-now-ga">Cloud Backup for Virtual Machines 1.1.0 is now GA</h4>
@@ -807,7 +820,7 @@
 </ul>
 </div>
 <div class="paragraph">
-<p>Note that the Cloud Restore instance/VM will be removed automatically if you were previously using it.</p>
+<p>Note that the Cloud Restore instance/VM will be removed automatically if you were previously using it. A Cloud Backup process will run once a day to delete all old Cloud Restore instances. This change is completely transparent&#8201;&#8212;&#8201;there is no effect on your data, and you won&#8217;t notice any changes to your backup or restore jobs.</p>
 </div>
 </div>
 <div class="sect3">
