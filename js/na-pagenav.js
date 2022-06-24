@@ -3,7 +3,7 @@ $(document).ready(function() {
   const SECTIONS = $("main h2, main h3");
   // PAGE NAV - Init
   if(SECTIONS.length == 0) {
-    $(".page-nav-container").css('display','none');
+    $(".page-nav-container").remove();
     $("#pagenav-css").attr("disabled", "disabled");
   } else {
     $(".page-nav-title").css('display','block');
