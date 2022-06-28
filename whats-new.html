@@ -491,6 +491,27 @@
 <p>This section describes new features related to Cloud Manager&#8217;s administration features: Accounts, Connectors, cloud provider credentials, and more.</p>
 </div>
 <div class="sect2">
+<h3 id="28-june-2022">28 June 2022</h3>
+<div class="sect3">
+<h4 id="log-in-with-netapp-credentials">Log in with NetApp credentials</h4>
+<div class="paragraph">
+<p>When new users sign up to Cloud Central, they can now select the <strong>Log in with NetApp</strong> option to log in with their NetApp Support Site credentials. This is an alternative to entering an email address and password.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<img src="/us-en/cloud-manager-relnotes/images/note.svg" alt="Note">
+</td>
+<td class="content">
+Existing logins that use an email address and password need to keep using that login method. The Log in with NetApp option is available for new users who sign up.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="7-june-2022">7 June 2022</h3>
 <div class="sect3">
 <h4 id="connector-3-9-19">Connector 3.9.19</h4>
@@ -528,68 +549,6 @@
 <h4 id="connector-3-9-18-patch">Connector 3.9.18 patch</h4>
 <div class="paragraph">
 <p>We updated the Connector to introduce bug fixes. The most notable fix is to an issue that affects Cloud Volumes ONTAP deployment in Google Cloud when the Connector is in a shared VPC.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="2-may-2022">2 May 2022</h3>
-<div class="sect3">
-<h4 id="connector-3-9-18">Connector 3.9.18</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The Connector is now supported in the following Google Cloud regions:</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Delhi (asia-south2)</p>
-</li>
-<li>
-<p>Melbourne (australia-southeast2)</p>
-</li>
-<li>
-<p>Milan (europe-west8)</p>
-</li>
-<li>
-<p>Santiago (southamerica-west1)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions</a></p>
-</div>
-</li>
-<li>
-<p>When you select the Google Cloud service account to use with the Connector, Cloud Manager now displays the email address that&#8217;s associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.</p>
-<div class="paragraph">
-<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-setup-admin/main/media/screenshot-google-cloud-service-account.png" alt="A screenshot of the service account field"></span></p>
-</div>
-</li>
-<li>
-<p>We have certified the Connector in Google Cloud on a VM instance with an OS that supports <a href="https://cloud.google.com/compute/shielded-vm/docs/shielded-vm" target="_blank" rel="noopener">Shielded VM features</a></p>
-</li>
-<li>
-<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-may-2022" target="_blank" rel="noopener">Learn about those enhancements</a></p>
-</li>
-<li>
-<p>New AWS permissions are required for the Connector to deploy Cloud Volumes ONTAP.</p>
-<div class="paragraph">
-<p>The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribePlacementGroups",
-"iam:GetRolePolicy",</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>These permissions are now required to optimize how Cloud Manager creates the placement group.</p>
-</div>
-<div class="paragraph">
-<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. You can find the latest list of permissions on the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager policies page</a>.</p>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -822,7 +781,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="2-may-2022-2">2 May 2022</h3>
+<h3 id="2-may-2022">2 May 2022</h3>
 <div class="sect3">
 <h4 id="search-restore-is-now-supported-with-backup-files-in-google-cloud-storage">Search &amp; Restore is now supported with backup files in Google Cloud Storage</h4>
 <div class="paragraph">
@@ -1246,7 +1205,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="2-may-2022-3">2 May 2022</h3>
+<h3 id="2-may-2022-2">2 May 2022</h3>
 <div class="paragraph">
 <p>The following changes were introduced with the 3.9.18 release of the Connector.</p>
 </div>
