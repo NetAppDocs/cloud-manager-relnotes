@@ -1,4 +1,4 @@
-window.onload = () => {
+window.addEventListener("load", () => {
     var sidebarDiv = document.getElementById("sidebar-height");
     var productNavDiv = document.getElementById("product-nav");
     if (sidebarDiv.contains(productNavDiv)) {
@@ -12,4 +12,4 @@ window.onload = () => {
     if (pdfContainer.contains(pdfPageLink)) {
         pdfPageLink.remove();
     }
-}
+});

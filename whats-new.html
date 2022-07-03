@@ -491,6 +491,71 @@
 <p>This section describes new features related to Cloud Manager&#8217;s administration features: Accounts, Connectors, cloud provider credentials, and more.</p>
 </div>
 <div class="sect2">
+<h3 id="3-july-2022">3 July 2022</h3>
+<div class="sect3">
+<h4 id="connector-3-9-20">Connector 3.9.20</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>We&#8217;ve introduced a new way to navigate to the growing list of features in the Cloud Manager interface. All the familiar Cloud Manager capabilities can now be easily found by hovering over the left panel.</p>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-navigation.png" alt="A screenshot that shows the new left-hand navigation menu in Cloud Manager."></span></p>
+</div>
+</li>
+<li>
+<p>You can now configure Cloud Manager to send notifications by email so you can be informed of important system activity even when you&#8217;re not logged into the system.</p>
+<div class="paragraph">
+<p><a href="task-monitor-cm-operations.html">Learn more about monitoring operations in your account</a>.</p>
+</div>
+</li>
+<li>
+<p>Cloud Manager now supports Azure Blob storage and Google Cloud Storage as working environments, similar to Amazon S3 support.</p>
+<div class="paragraph">
+<p>After you install a Connector in Azure or Google Cloud, Cloud Manager now automatically discovers information about Azure Blob storage in your Azure subscription or the Google Cloud Storage in the project where the Connector is installed. Cloud Manager displays the object storage as a working environment that you can open to view more detailed information.</p>
+</div>
+<div class="paragraph">
+<p>Here&#8217;s an example of an Azure Blob working environment:</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-azure-blob.png" alt="A screenshot that shows an Azure Blob working environment where you can view a high level overview and then detailed information about the storage accounts."></span></p>
+</div>
+</li>
+<li>
+<p>We redesigned the resources page for an Amazon S3 working environment by providing more detailed information about S3 buckets, such as capacity, encryption details, and more.</p>
+</li>
+<li>
+<p>The Connector is now supported in the following Google Cloud regions:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Madrid (europe-southwest1)</p>
+</li>
+<li>
+<p>Paris (europe-west9)</p>
+</li>
+<li>
+<p>Warsaw (europe-central2)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>The Connector is now supported in the Azure West US 3 region.</p>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions</a></p>
+</div>
+</li>
+<li>
+<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements.</p>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#2-july-2022" target="_blank" rel="noopener">Learn about Cloud Volumes ONTAP enhancements</a></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="28-june-2022">28 June 2022</h3>
 <div class="sect3">
 <h4 id="log-in-with-netapp-credentials">Log in with NetApp credentials</h4>
@@ -540,15 +605,6 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="12-may-2022">12 May 2022</h3>
-<div class="sect3">
-<h4 id="connector-3-9-18-patch">Connector 3.9.18 patch</h4>
-<div class="paragraph">
-<p>We updated the Connector to introduce bug fixes. The most notable fix is to an issue that affects Cloud Volumes ONTAP deployment in Google Cloud when the Connector is in a shared VPC.</p>
 </div>
 </div>
 </div>
@@ -943,6 +999,81 @@ Existing logins that use an email address and password need to keep using that l
 <h2 id="cloud-sync">Cloud Sync</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="3-july-2022-2">3 July 2022</h3>
+<div class="sect3">
+<h4 id="support-for-azure-data-lake-storage-gen2">Support for Azure Data Lake Storage Gen2</h4>
+<div class="paragraph">
+<p>You can now sync data from an NFS server or SMB server to Azure Data Lake Storage Gen2.</p>
+</div>
+<div class="paragraph">
+<p>When creating a sync relationship that includes Azure Data Lake, you need to provide Cloud Sync with the storage account connection string. It must be a regular connection string, not a shared access signature (SAS).</p>
+</div>
+<div class="paragraph">
+<p><a href="reference-supported-relationships.html">View the list of supported sync relationships</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="continuous-sync-from-google-cloud-storage">Continuous sync from Google Cloud Storage</h4>
+<div class="paragraph">
+<p>The Continuous Sync setting is now supported from a source Google Cloud Storage bucket to a cloud storage target.</p>
+</div>
+<div class="paragraph">
+<p>After the initial data sync, Cloud Sync listens for changes on the source Google Cloud Storage bucket and continuously syncs any changes to the target as they occur. This setting is available when syncing from a Google Cloud Storage bucket to S3, Google Cloud Storage, Azure Blob storage, StorageGRID, or IBM Storage.</p>
+</div>
+<div class="paragraph">
+<p>The service account associated with your data broker needs the following permissions to use this setting:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">- pubsub.subscriptions.consume
+- pubsub.subscriptions.create
+- pubsub.subscriptions.delete
+- pubsub.subscriptions.list
+- pubsub.topics.attachSubscription
+- pubsub.topics.create
+- pubsub.topics.delete
+- pubsub.topics.list
+- pubsub.topics.setIamPolicy
+- storage.buckets.update</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="task-creating-relationships.html#settings">Learn more about the Continuous Sync setting</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-google-cloud-region-support">New Google Cloud region support</h4>
+<div class="paragraph">
+<p>The Cloud Sync data broker is now supported in the following Google Cloud regions:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Columbus (us-east5)</p>
+</li>
+<li>
+<p>Dallas (us-south1)</p>
+</li>
+<li>
+<p>Madrid (europe-southwest1)</p>
+</li>
+<li>
+<p>Milan (europe-west8)</p>
+</li>
+<li>
+<p>Paris (europe-west9)</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-google-cloud-machine-type">New Google Cloud machine type</h4>
+<div class="paragraph">
+<p>The default machine type for the data broker in Google Cloud is now n2-standard-4.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="6-june-2022">6 June 2022</h3>
 <div class="sect3">
 <h4 id="continuous-sync">Continuous sync</h4>
@@ -1273,7 +1404,7 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 </div>
 <div class="sect3">
-<h4 id="new-google-cloud-region-support">New Google Cloud region support</h4>
+<h4 id="new-google-cloud-region-support-2">New Google Cloud region support</h4>
 <div class="paragraph">
 <p>Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:</p>
 </div>
