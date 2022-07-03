@@ -459,7 +459,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-06-08 16:06:51 +0000">06/08/2022</time>
+    <time datetime="2022-07-03 17:02:41 +0000">07/03/2022</time>
     
   
 
@@ -1239,6 +1239,79 @@ Existing logins that use an email address and password need to keep using that l
 <h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="3-july-2022-3">3 July 2022</h3>
+<div class="paragraph">
+<p>The following changes were introduced with the 3.9.20 release of the Connector.</p>
+</div>
+<div class="sect3">
+<h4 id="digital-wallet">Digital Wallet</h4>
+<div class="paragraph">
+<p>The Digital Wallet now shows you the total consumed capacity in your account and the consumed capacity by licensing package. This can help you understand how you&#8217;re being charged and whether you need to purchase additional capacity.</p>
+</div>
+<div class="paragraph">
+<p><span class="image"><img src="./media/screenshot-digital-wallet-summary.png" alt="A screenshot that shows the Digital Wallet page for capacity-based licenses. The page provides an overview of the consumed capacity in your account and then breaks down the consumed capacity by licensing package."></span></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="elastic-volumes-enhancement">Elastic Volumes enhancement</h4>
+<div class="paragraph">
+<p>Cloud Manager now supports the Amazon EBS Elastic Volumes feature when creating a Cloud Volumes ONTAP working environment from the user interface. The Elastic Volumes feature is enabled by default when using gp3 or io1 disks. You can choose the initial capacity based on your storage needs and revise it after Cloud Volumes ONTAP is deployed.</p>
+</div>
+<div class="paragraph">
+<p><a href="concept-aws-elastic-volumes.html">Learn more about support for Elastic Volumes in AWS</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ontap-s3-license-in-aws">ONTAP S3 license in AWS</h4>
+<div class="paragraph">
+<p>Cloud Manager now automatically installs the ONTAP S3 license on new and existing Cloud Volumes ONTAP systems running version 9.11.0 or later in AWS.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/object-storage-management/index.html" target="_blank" rel="noopener">Learn how to configure and manage S3 object storage services in ONTAP</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-azure-cloud-region-support">New Azure Cloud region support</h4>
+<div class="paragraph">
+<p>Starting with the 9.10.1 release, Cloud Volumes ONTAP is now supported in the Azure West US 3 region.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions for Cloud Volumes ONTAP</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="ontap-s3-license-in-azure">ONTAP S3 license in Azure</h4>
+<div class="paragraph">
+<p>Cloud Manager now automatically installs the ONTAP S3 license on new and existing Cloud Volumes ONTAP systems running version 9.9.1 or later in Azure.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/ontap/object-storage-management/index.html" target="_blank" rel="noopener">Learn how to configure and manage S3 object storage services in ONTAP</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="new-google-cloud-region-support-2">New Google Cloud region support</h4>
+<div class="paragraph">
+<p>Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Madrid (europe-southwest1)</p>
+</li>
+<li>
+<p>Paris (europe-west9)</p>
+</li>
+<li>
+<p>Warsaw (europe-central2)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions for Cloud Volumes ONTAP</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="7-june-2022-2">7 June 2022</h3>
 <div class="paragraph">
 <p>The following changes were introduced with the 3.9.19 release of the Connector.</p>
@@ -1404,7 +1477,7 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 </div>
 <div class="sect3">
-<h4 id="new-google-cloud-region-support-2">New Google Cloud region support</h4>
+<h4 id="new-google-cloud-region-support-3">New Google Cloud region support</h4>
 <div class="paragraph">
 <p>Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:</p>
 </div>
@@ -1460,27 +1533,6 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png" alt="A screenshot of the service account field"></span></p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="3-april-2022-2">3 April 2022</h3>
-<div class="sect3">
-<h4 id="system-manager-link-has-been-removed">System Manager link has been removed</h4>
-<div class="paragraph">
-<p>We have removed the System Manager link that was previously available from within a Cloud Volumes ONTAP working environment.</p>
-</div>
-<div class="paragraph">
-<p>You can still connect to System Manager by entering the cluster management IP address in a web browser that has a connection to the Cloud Volumes ONTAP system. <a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-connecting-to-otc.html">Learn more about connecting to System Manager</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="charging-for-worm-storage">Charging for WORM storage</h4>
-<div class="paragraph">
-<p>Now that the introductory special rate has expired, you will now be charged for using WORM storage. Charging is hourly, according to the total provisioned capacity of WORM volumes. This applies to new and existing Cloud Volumes ONTAP systems.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://cloud.netapp.com/pricing" target="_blank" rel="noopener">Learn about pricing for WORM storage</a>.</p>
 </div>
 </div>
 </div>
