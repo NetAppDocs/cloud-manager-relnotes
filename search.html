@@ -428,6 +428,8 @@
   data-did-you-mean="Search for {suggestion}." 
   data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
   data-results-found="{hitCount} results found"
+  data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+  data-error-reset="Reset Search"
   data-sk-es-pf-indexes=""
   data-flavor=""></div>
   <button class="search-all-icon n-property-bar__search-toggle-button" type="button">
@@ -586,6 +588,7 @@
     <script src='/us-en/cloud-manager-relnotes/js/tabbed-blocks.js'></script>
     <script src='/us-en/cloud-manager-relnotes/js/sidebar.js'></script>
   </body><script>
+    /*
       if(hasParameter(window.location.search,'q')) {
         var queryString = decodeURI(getParameter(window.location.search, 'q'));
         document.getElementsByClassName("sk-search-box__text")[0].setAttribute("value", queryString);
@@ -608,4 +611,5 @@
         param = param || "";
         return (searchString.indexOf("?"+param+"=") != -1 || searchString.indexOf("&"+param+"=") != -1);
       }
+      */
   </script></html>

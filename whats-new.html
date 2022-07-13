@@ -258,11 +258,13 @@
           <div id="react-search" 
           data-search-html="/us-en/cloud-manager-relnotes/search.html"
           data-type="widget" 
-          data-placeholder="Search Documentation" 
-          data-no-results-found="No results were found for {query}" 
-          data-did-you-mean="Search for {suggestion}." 
-          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?" 
-          data-results-found="{hitCount} results found"  
+          data-placeholder="Search Documentation"
+          data-no-results-found="No results were found for {query}"
+          data-did-you-mean="Search for {suggestion}."
+          data-no-results-found-did-you-mean="No results found for {query}. Did you mean {suggestion}?"
+          data-results-found="{hitCount} results found"
+          data-error-message="We're sorry, an issue occurred when fetching your results. Please try again."
+          data-error-reset="Reset Search"
           data-sk-es-pf-indexes=""
           data-flavor=""></div>
           <button class="n-property-bar__search-toggle-button" type="button">
@@ -770,6 +772,34 @@ Existing logins that use an email address and password need to keep using that l
 <h2 id="cloud-backup">Cloud Backup</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="13-july-2022">13 July 2022</h3>
+<div class="sect3">
+<h4 id="support-has-been-added-to-back-up-snaplock-enterprise-volumes">Support has been added to back up SnapLock Enterprise volumes</h4>
+<div class="paragraph">
+<p>Now you can use Cloud Backup to back up SnapLock Enterprise volumes to public and private clouds. This feature requires that your ONTAP system is running ONTAP 9.11.1 or later. SnapLock Compliance volumes, however, aren’t currently supported.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="now-you-can-create-backup-files-in-the-public-cloud-when-using-an-on-premises-connector">Now you can create backup files in the public cloud when using an on-premises Connector</h4>
+<div class="paragraph">
+<p>In the past you needed to deploy the Connector in the same cloud provider as where you were creating backup files. Now you can use a Connector deployed in your premises to create backup files from on-prem ONTAP systems to Amazon S3, Azure Blob, and Google Cloud Storage. (An on-prem Connector was always required when creating backup files on StorageGRID systems.)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="additional-features-are-available-when-creating-backup-policies-for-ontap-systems">Additional features are available when creating backup policies for ONTAP systems</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Backup on a yearly schedule is now available. The default retention value is 1 for yearly backups, but you can change this value if you want to have access to many previous years' backup files.</p>
+</li>
+<li>
+<p>You can name your backup policies so you can identify your policies with more descriptive text.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="14-june-2022">14 June 2022</h3>
 <div class="sect3">
 <h4 id="support-has-been-added-to-back-up-on-premises-ontap-cluster-data-in-sites-without-internet-access">Support has been added to back up on-premises ONTAP cluster data in sites without internet access</h4>
@@ -874,27 +904,6 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 <div class="paragraph">
 <p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-licensing-cloud-backup.html">Learn more about the available licensing models</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="4-april-2022">4 April 2022</h3>
-<div class="sect3">
-<h4 id="cloud-backup-for-applications-1-1-0-powered-by-snapcenter-is-now-ga">Cloud Backup for Applications 1.1.0 (powered by SnapCenter) is now GA</h4>
-<div class="paragraph">
-<p>The new Cloud Backup for Applications capability enables you to offload existing application consistent Snapshots (backups) for Oracle and Microsoft SQL from on-premises primary storage to cloud object storage in Amazon S3 or Azure Blob.</p>
-</div>
-<div class="paragraph">
-<p>When required, you can restore this data from cloud to on-premises.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/concept-protect-app-data-to-cloud.html">Learn more about protecting on-premises applications data to the cloud</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="new-search-restore-feature-to-search-for-volumes-or-files-across-all-ontap-backup-files">New Search &amp; Restore feature to search for volumes or files across all ONTAP backup files</h4>
-<div class="paragraph">
-<p>Now you can search for a volume or file across <strong>all ONTAP backup files</strong> by partial or full volume name, partial or full file name, size range, and additional search filters. This is a great new way to find the data you want to restore if you are not sure which cluster or volume was the source for the data. <a href="https://docs.netapp.com/us-en/cloud-manager-backup-restore/task-restore-backups-ontap.html#restoring-ontap-data-using-search-restore">Learn how to use Search &amp; Restore</a>.</p>
 </div>
 </div>
 </div>
@@ -1223,7 +1232,7 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 </div>
 <div class="sect2">
-<h3 id="4-april-2022-2">4 April 2022</h3>
+<h3 id="4-april-2022">4 April 2022</h3>
 <div class="sect3">
 <h4 id="amazon-s3-glacier-instant-retrieval-storage-class-is-now-available">Amazon S3 Glacier Instant Retrieval storage class is now available</h4>
 <div class="paragraph">
