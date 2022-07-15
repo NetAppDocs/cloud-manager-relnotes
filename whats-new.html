@@ -493,6 +493,21 @@
 <p>This section describes new features related to Cloud Manager&#8217;s administration features: Accounts, Connectors, cloud provider credentials, and more.</p>
 </div>
 <div class="sect2">
+<h3 id="15-july-2022">15 July 2022</h3>
+<div class="sect3">
+<h4 id="policy-changes">Policy changes</h4>
+<div class="paragraph">
+<p>We updated the documentation by adding the Cloud Manager policies directly inside the docs. This means you can now view the required permissions for the Connector and Cloud Volumes ONTAP right alongside the steps that describe how to set them up. These policies were previously accessible from a page on the NetApp Support Site.</p>
+</div>
+<div class="paragraph">
+<p><a href="task-creating-connectors-aws.html#create-an-iam-policy">Here&#8217;s an example that shows the AWS IAM role permissions used to create a Connector</a>.</p>
+</div>
+<div class="paragraph">
+<p>We also created a page that provides links to each of the policies. <a href="reference-permissions.html">View the permissions summary for Cloud Manager</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="3-july-2022">3 July 2022</h3>
 <div class="sect3">
 <h4 id="connector-3-9-20">Connector 3.9.20</h4>
@@ -575,38 +590,6 @@ Existing logins that use an email address and password need to keep using that l
 </td>
 </tr>
 </table>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="7-june-2022">7 June 2022</h3>
-<div class="sect3">
-<h4 id="connector-3-9-19">Connector 3.9.19</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The Connector is now supported in the AWS Jakarta region (ap-southeast-3).</p>
-</li>
-<li>
-<p>The Connector is now supported in the Azure Brazil Southeast region.</p>
-<div class="paragraph">
-<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions</a></p>
-</div>
-</li>
-<li>
-<p>This release of the Connector also includes Cloud Volumes ONTAP enhancements and on-prem ONTAP cluster enhancements.</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/whats-new.html#7-june-2022" target="_blank" rel="noopener">Learn about Cloud Volumes ONTAP enhancements</a></p>
-</li>
-<li>
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-ontap-onprem/whats-new.html#7-june-2022" target="_blank" rel="noopener">Learn about ONTAP on-prem cluster enhancements</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -1321,7 +1304,7 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 </div>
 <div class="sect2">
-<h3 id="7-june-2022-2">7 June 2022</h3>
+<h3 id="7-june-2022">7 June 2022</h3>
 <div class="paragraph">
 <p>The following changes were introduced with the 3.9.19 release of the Connector.</p>
 </div>
@@ -1367,7 +1350,7 @@ Existing logins that use an email address and password need to keep using that l
 </div>
 </div>
 <div class="paragraph">
-<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. You can find the latest list of permissions on the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager policies page</a>.</p>
+<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">View the latest Connector policy for AWS</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1482,7 +1465,7 @@ Existing logins that use an email address and password need to keep using that l
 <p>These permissions are now required to optimize how Cloud Manager creates the placement group.</p>
 </div>
 <div class="paragraph">
-<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. You can find the latest list of permissions on the <a href="https://mysupport.netapp.com/site/info/cloud-manager-policies" target="_blank" rel="noopener">Cloud Manager policies page</a>.</p>
+<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">View the latest Connector policy for AWS</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -1765,7 +1748,7 @@ Existing logins that use an email address and password need to keep using that l
 <h2 id="on-prem-ontap-clusters">On-prem ONTAP clusters</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="7-june-2022-3">7 June 2022</h3>
+<h3 id="7-june-2022-2">7 June 2022</h3>
 <div class="paragraph">
 <p>The following change was introduced with the 3.9.19 release of the Connector.</p>
 </div>
