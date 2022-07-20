@@ -461,7 +461,7 @@
 <p class="page-details">
   
     
-    <time datetime="2022-07-11 22:08:20 +0000">07/11/2022</time>
+    <time datetime="2022-07-20 21:04:52 +0000">07/20/2022</time>
     
   
 
@@ -1253,6 +1253,28 @@ Existing logins that use an email address and password need to keep using that l
 <h2 id="cloud-volumes-ontap">Cloud Volumes ONTAP</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="18-july-2022">18 July 2022</h3>
+<div class="sect3">
+<h4 id="new-licensing-packages-in-azure">New licensing packages in Azure</h4>
+<div class="paragraph">
+<p>Two new capacity-based licensing packages are available for Cloud Volumes ONTAP in Azure when you pay through an Azure Marketplace subscription:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Optimized</strong>: Pay for provisioned capacity and I/O operations separately</p>
+</li>
+<li>
+<p><strong>Edge Cache</strong>: Licensing for <a href="https://cloud.netapp.com/cloud-volumes-edge-cache" target="_blank" rel="noopener">Cloud Volumes Edge Cache</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#packages">Learn more about these licensing packages</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
 <h3 id="3-july-2022-4">3 July 2022</h3>
 <div class="paragraph">
 <p>The following changes were introduced with the 3.9.20 release of the Connector.</p>
@@ -1397,134 +1419,6 @@ Existing logins that use an email address and password need to keep using that l
 <p><a href="task-managing-svms-gcp.html">Learn how to create data-serving storage VMs for Cloud Volumes ONTAP in Google Cloud</a></p>
 </li>
 </ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="2-may-2022-2">2 May 2022</h3>
-<div class="paragraph">
-<p>The following changes were introduced with the 3.9.18 release of the Connector.</p>
-</div>
-<div class="sect3">
-<h4 id="cloud-volumes-ontap-9-11-0">Cloud Volumes ONTAP 9.11.0</h4>
-<div class="paragraph">
-<p>Cloud Manager can now deploy and manage Cloud Volumes ONTAP 9.11.0.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes" target="_blank" rel="noopener">Learn about the new features included in this release of Cloud Volumes ONTAP</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="enhancement-to-mediator-upgrades">Enhancement to mediator upgrades</h4>
-<div class="paragraph">
-<p>When Cloud Manager upgrades the mediator for an HA pair, it now validates that a new mediator image is available before it deletes the boot disk. This change ensures that the mediator can continue to operate successfully if the upgrade process is unsuccessful.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="k8s-tab-has-been-removed">K8s tab has been removed</h4>
-<div class="paragraph">
-<p>The K8s tab was deprecated in a previous and has now been removed. If you want to use Kubernetes with Cloud Volumes ONTAP, you can add managed-Kubernetes clusters to the Canvas as a working environment for advanced data management.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-kubernetes/concept-kubernetes.html" target="_blank" rel="noopener">Learn about Kubernetes data management in Cloud Manager</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="annual-contract-in-azure">Annual contract in Azure</h4>
-<div class="paragraph">
-<p>The Essentials and Professional packages are now available in Azure through an annual contract. You can contact your NetApp sales representative to purchase an annual contract. The contract is available as a private offer in the Azure Marketplace.</p>
-</div>
-<div class="paragraph">
-<p>After NetApp shares the private offer with you, you can select the annual plan when you subscribe from the Azure Marketplace during working environment creation.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html">Learn more about licensing</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="s3-glacier-instant-retrieval">S3 Glacier Instant Retrieval</h4>
-<div class="paragraph">
-<p>You can now store tiered data in the Amazon S3 Glacier Instant Retrieval storage class.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/task-tiering.html#changing-the-storage-class-for-tiered-data">Learn how to change the storage class for tiered data</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="new-aws-permissions-required-for-the-connector">New AWS permissions required for the Connector</h4>
-<div class="paragraph">
-<p>The following permissions are now required to create an AWS spread placement group when deploying an HA pair in a single Availability Zone (AZ):</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-json" data-lang="json">"ec2:DescribePlacementGroups",
-"iam:GetRolePolicy",</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>These permissions are now required to optimize how Cloud Manager creates the placement group.</p>
-</div>
-<div class="paragraph">
-<p>Be sure to provide these permissions to each set of AWS credentials that you&#8217;ve added to Cloud Manager. <a href="https://docs.netapp.com/us-en/cloud-manager-setup-admin/reference-permissions-aws.html" target="_blank" rel="noopener">View the latest Connector policy for AWS</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="new-google-cloud-region-support-2">New Google Cloud region support</h4>
-<div class="paragraph">
-<p>Cloud Volumes ONTAP is now supported in the following Google Cloud regions starting with the 9.10.1 release:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Delhi (asia-south2)</p>
-</li>
-<li>
-<p>Melbourne (australia-southeast2)</p>
-</li>
-<li>
-<p>Milan (europe-west8) - single node only</p>
-</li>
-<li>
-<p>Santiago (southamerica-west1) - single node only</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><a href="https://cloud.netapp.com/cloud-volumes-global-regions" target="_blank" rel="noopener">View the full list of supported regions for Cloud Volumes ONTAP</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="support-for-n2-standard-16-in-google-cloud">Support for n2-standard-16 in Google Cloud</h4>
-<div class="paragraph">
-<p>The n2-standard-16 machine type is now supported with Cloud Volumes ONTAP in Google Cloud, starting with the 9.10.1 release.</p>
-</div>
-<div class="paragraph">
-<p><a href="https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-configs-gcp.html" target="_blank" rel="noopener">View supported configurations for Cloud Volumes ONTAP in Google Cloud</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="enhancements-to-google-cloud-firewall-policies">Enhancements to Google Cloud firewall policies</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>When you create a Cloud Volumes ONTAP HA pair in Google Cloud, Cloud Manager will now display all existing firewall policies in a VPC.</p>
-<div class="paragraph">
-<p>Previously, Cloud Manager wouldn&#8217;t display any policies in VPC-1, VPC-2, or VPC-3 that didn&#8217;t have a target tag.</p>
-</div>
-</li>
-<li>
-<p>When you create a Cloud Volumes ONTAP single node system in Google Cloud, you can now choose whether you want the predefined firewall policy to allow traffic within the selected VPC only (recommended) or all VPCs.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="enhancement-to-google-cloud-service-accounts">Enhancement to Google Cloud service accounts</h4>
-<div class="paragraph">
-<p>When you select the Google Cloud service account to use with Cloud Volumes ONTAP, Cloud Manager now displays the email address that&#8217;s associated with each service account. Viewing the email address can make it easier to distinguish between service accounts that share the same name.</p>
-</div>
-<div class="paragraph">
-<p><span class="image"><img src="https://raw.githubusercontent.com/NetAppDocs/cloud-manager-cloud-volumes-ontap/main/media/screenshot-google-cloud-service-account.png" alt="A screenshot of the service account field"></span></p>
 </div>
 </div>
 </div>
