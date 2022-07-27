@@ -1490,6 +1490,40 @@ Existing logins that use an email address and password need to keep using that l
 <h2 id="global-file-cache">Global File Cache</h2>
 <div class="sectionbody">
 <div class="sect2">
+<h3 id="25-july-2022-version-2-0">25 July 2022 (version 2.0)</h3>
+<div class="paragraph">
+<p>This release provide the new features listed below. It also fixes the issues described in the <a href="https://docs.netapp.com/us-en/cloud-manager-file-cache/fixed-issues.html">Fixed Issues</a>.</p>
+</div>
+<div class="sect3">
+<h4 id="new-capacity-based-licensing-model-for-global-file-cache-through-the-azure-marketplace">New capacity-based licensing model for Global File Cache through the Azure Marketplace</h4>
+<div class="paragraph">
+<p>A new "Edge Cache" license has the same capabilities as the "CVO Professional" license, but it also includes support for Global File Cache. You&#8217;ll see this option when deploying a new Cloud Volumes ONTAP system in Azure. You are entitled to deploy one Global File Cache Edge system for each 3 TiB of provisioned capacity on the Cloud Volumes ONTAP system. A minimum of 30 TiB should be provisioned. The GFC License Manager Service has been enhanced to provide capacity-based licensing.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://docs.netapp.com/us-en/cloud-manager-cloud-volumes-ontap/concept-licensing.html#capacity-based-licensing">Learn more about the Edge Cache license package.</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="global-file-cache-is-now-integrated-with-cloud-insights">Global File Cache is now integrated with Cloud Insights</h4>
+<div class="paragraph">
+<p>NetApp Cloud Insights (CI) gives complete visibility into your infrastructure and applications. Global File Cache is now integrated with CI to provide complete visibility of all edges and cores; monitoring processes running on the instances. Various Global File Cache metrics are pushed to CI to provide a complete overview on the CI dashboard.</p>
+</div>
+<div class="paragraph">
+<p><a href="https://cloud.netapp.com/cloud-insights">Learn more about Cloud Insights.</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="license-management-server-has-been-enhanced-to-operate-in-very-restrictive-environments">License Management Server has been enhanced to operate in very restrictive environments</h4>
+<div class="paragraph">
+<p>During license configuration, the License Management Server (LMS) should have access to the internet to collect the licensing details from NetApp/Zuora. Once the configuration is successful, the LMS can continue to work in offline mode and provide licensing capabilities despite being in restrictive environments.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="the-edge-sync-ui-in-optimus-has-been-enhanced-to-show-the-list-of-connected-clients-on-a-coordinator-edge">The Edge Sync UI in Optimus has been enhanced to show the list of connected clients on a coordinator Edge</h4>
+
+</div>
+</div>
+<div class="sect2">
 <h3 id="23-june-2022-version-1-3-1">23 June 2022 (version 1.3.1)</h3>
 <div class="paragraph">
 <p>Global File Cache Edge software for version 1.3.1 is available at <a href="https://docs.netapp.com/us-en/cloud-manager-file-cache/download-gfc-resources.html#download-required-resources">this page</a>. This release fixes the issues described in the <a href="https://docs.netapp.com/us-en/cloud-manager-file-cache/fixed-issues.html">Fixed Issues</a>.</p>
@@ -1510,40 +1544,6 @@ Existing logins that use an email address and password need to keep using that l
 <h4 id="license-manager-service-enhancements">License Manager Service enhancements</h4>
 <div class="paragraph">
 <p>The Global File Cache License Management Server (LMS) service is enhanced to auto detect proxy settings. This enables a seamless configuration.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="17-december-2021-version-1-2-0">17 December 2021 (version 1.2.0)</h3>
-<div class="sect3">
-<h4 id="the-openssl-module-has-been-upgraded-to-version-1-1-1l">The OpenSSL module has been upgraded to version 1.1.1l.</h4>
-<div class="paragraph">
-<p>This is the latest version and it is more secure. This module is used for secure communication between GFC Edge and GFC Core.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-logging-infrastructure-has-been-enhanced">The logging infrastructure has been enhanced.</h4>
-
-</div>
-</div>
-<div class="sect2">
-<h3 id="9-june-2021-version-1-1-0">9 June 2021 (version 1.1.0)</h3>
-<div class="sect3">
-<h4 id="the-edge-synchronization-feature-has-been-added">The "Edge Synchronization" feature has been added.</h4>
-<div class="paragraph">
-<p>This feature keeps multiple Edges at a remote office in sync and the data is always cached/warm. When a file is flushed/fetched at one Edge, then the same file on all Edges participating in Edge Sync is updated and cached. See section 8.4 in the <a href="https://repo.cloudsync.netapp.com/gfc/Netapp%20GFC%20User%20Guide%201.1.0.pdf" target="_blank" rel="noopener">NetApp Global File Cache User Guide</a> for details.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="the-openssl-module-has-been-upgraded-to-version-1-1-1k">The OpenSSL module has been upgraded to version 1.1.1k.</h4>
-<div class="paragraph">
-<p>This is the latest version and it is more secure. This module is used for secure communication between GFC Edge and GFC Core.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="updated-license-registration-page">Updated License Registration Page.</h4>
-<div class="paragraph">
-<p>The GFC License Registration Page now displays the number of licenses when activated through a NetApp subscription.</p>
 </div>
 </div>
 </div>
